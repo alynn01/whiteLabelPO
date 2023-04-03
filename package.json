@@ -1,0 +1,15 @@
+{
+  "name": "whitelabelpo",
+  "version": "1.0.0",
+  "description": "This is the Program Admin Portal test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.9.0",
+    "cypress-multi-reporters": "^1.6.3"
+  }
+}
