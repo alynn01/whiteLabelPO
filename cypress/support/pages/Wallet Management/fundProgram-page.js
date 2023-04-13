@@ -1,9 +1,9 @@
 export class FundProgramUserPage{
     walletMenuItem = () => cy.get('[href="/dashboard/wallet"] > span');
     quickActionDropdown = () => cy.get(`[class*="placeholder"]`).contains("Quick actions");
-    fundProgramDropdownItem = () => cy.get('.sc-csuSiG > :nth-child(1)').contains('Fund programs')
-    programDropdown = () => cy.get('.control-value');
-    selectProgram = () => cy.get('.sc-csuSiG > :nth-child(2)');
+    fundProgramDropdownItem = () => cy.get(`div[type="button"]`).contains('Fund programs')
+    programDropdown = () => cy.get(`input[placeholder="Program"]`);
+    selectProgram = () => cy.get('.sc-lllmON > :nth-child(1)').contains("Amas Program");
     enterAmount = () => cy.get(`input[name="amount"]`);
     fundProgramButton = () => cy.get('.button-text').contains('Fund program')
     popupHeader = () => cy.get('.modal-header-content > span').contains('Fund program accounts')
@@ -18,7 +18,7 @@ export class FundProgramUserPage{
 
     enterFundDetails(){
         this.programDropdown().click({force : true})
-        this.selectProgram().click()
+        this.selectProgram().click({force : true})
         this.enterAmount().type('1')
         this.fundProgramButton().should('be.visible')
     }
