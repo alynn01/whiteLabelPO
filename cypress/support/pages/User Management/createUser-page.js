@@ -6,25 +6,20 @@ export class CreateUserPage {
     endUserMenuItem = () =>
       cy.get('[href="/dashboard/users"] > span').contains("End users");
     createUserDropdown = () =>
-      cy
-        .get(
-          ":nth-child(2) > .sc-pyfCe > .sc-jrcTuL > .sc-kDvujY > #dropdownchild"
-        )
-        .contains("Create new user");
+      cy.get(`[class*="placeholder"]`).contains("Create new user");
     openCreateUserPopup = () =>
-      cy.get(".sc-csuSiG > :nth-child(1)").contains("Single user creation");
+      cy.contains("Single user creation");
     firstNameField = () => cy.get('input[name="firstName"]');
     lastNameField = () => cy.get('input[name="lastName"]');
     emailEntryField = () => cy.get('input[name="emailAddress"]');
     seearchNig = () => cy.get('input[id="dropdownchild"]');
-    selectNigeria = () => cy.get(".sc-eDWCr").contains("Nigeria");
+    selectNigeria = () => cy.contains("Nigeria");
     phoneNumber = () => cy.get('input[name="phoneNumber"]');
-    gender = () => cy.get(".jhLczD > .sc-jrcTuL > .sc-kDvujY > .placeholder");
-    male = () => cy.get(".sc-csuSiG > :nth-child(2)").contains("Male");
-    selectProgram = () =>
-      cy.get(".cwyUru > .sc-jrcTuL > .sc-kDvujY > .placeholder");
+    gender = () => cy.get(`[class*="placeholder"]`).contains("Gender");
+    male = () => cy.contains("Male");
+    selectProgram = () => cy.get(`[class*="placeholder"]`).contains("Select program");
     chooseProgram = () =>
-    cy.get('.sc-csuSiG > :nth-child(1)').contains("Auto Ama");
+    cy.contains("Amas Program");
     createUserButton = () => cy.get(".button-text").contains("Create user");
   
     accessPOPortal(email, password, url) {
