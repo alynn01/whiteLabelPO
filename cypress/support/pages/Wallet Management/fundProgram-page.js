@@ -3,7 +3,7 @@ export class FundProgramUserPage{
     quickActionDropdown = () => cy.get(`[class*="placeholder"]`).contains("Quick actions");
     fundProgramDropdownItem = () => cy.get(`div[type="button"]`).contains('Fund programs')
     programDropdown = () => cy.get(`input[placeholder="Program"]`);
-    selectProgram = () => cy.get('.sc-lllmON > :nth-child(1)').contains("Amas Program");
+    selectProgram = () => cy.get('.sc-lllmON > :nth-child(2)').contains("Amas Program");
     enterAmount = () => cy.get(`input[name="amount"]`);
     fundProgramButton = () => cy.get('.button-text').contains('Fund program')
     popupHeader = () => cy.get('.modal-header-content > span').contains('Fund program accounts')
