@@ -30,4 +30,32 @@ describe('Program More Details', () => {
         programDetails.openSingleUserCreation()
        
     })
+
+    it('Test that user is able to access bulk user creation page', () => {
+        programDetails.accessProgramPage()
+        programDetails.openBulkUserCreation()
+    })
+
+    it('Test that user is able to access add user to program page', () => {
+        programDetails.accessProgramPage()
+        programDetails.openAddUserToProgram()
+    })
+
+    
+    it('Test that user is able to access remove user from program', () => {
+        programDetails.accessProgramPage();
+        programDetails.openRemoveUser();
+       
+    })
+
+    it('Test that user is able to view administrators', () => {
+        programDetails.accessProgramPage();
+        programDetails.openAdministratorsPage();
+    })
+
+    
+    it('Test that user is able to view end users', () => {
+        programDetails.accessProgramPage();
+        programDetails.openEndUsersPage()
+    })
 })

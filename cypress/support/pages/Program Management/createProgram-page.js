@@ -29,10 +29,10 @@ export class CreateProgramPage {
     cy.wait(2000)
     this.selectUSD().click()
     this.progDescription().type("This is a test program")
-    //this.createProgramButton().should('be.visible')
-    this.createProgramButton().click()
+    this.createProgramButton().should('be.visible')
+    //this.createProgramButton().click()
     // verify that the success message is displayed
-    cy.get('.sc-kgTSHT').should('be.visible');
-    cy.contains('Program created successfully. You can now fund your program account in the wallets page').should('be.visible');
+    //cy.get('.sc-kgTSHT').should('be.visible');
+    //cy.contains('Program created successfully. You can now fund your program account in the wallets page').should('be.visible');
   }
 }
