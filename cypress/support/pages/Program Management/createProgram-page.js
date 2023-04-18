@@ -35,4 +35,8 @@ export class CreateProgramPage {
     //cy.get('.sc-kgTSHT').should('be.visible');
     //cy.contains('Program created successfully. You can now fund your program account in the wallets page').should('be.visible');
   }
+
+  clickSubmitWithoutData(){
+    this.createProgramButton().click() 
+  }
 }

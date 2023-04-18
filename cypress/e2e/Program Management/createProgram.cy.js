@@ -17,4 +17,9 @@ describe('Create Program', () => {
        createProgram.accessCreateProgram();
        createProgram.enterProgramDetails();
     })
+
+    it('Test that user is unable to submit the form if the details arent completed', () => {
+      createProgram.accessCreateProgram();
+      createProgram.clickSubmitWithoutData();
+   })
 })
