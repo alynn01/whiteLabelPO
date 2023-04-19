@@ -11,6 +11,7 @@ export class CreateProgramPage {
   selectNig = () => cy.contains('Nigeria')
   selectUSD = () => cy.get('.sc-iJnaPW').contains('USD')
   createProgramButton = () => cy.get('.button-text').contains('Create program')
+  requiredFieldsAreFlagged = () => cy.get('.sc-GhhNo > div > span').contains("Program name is required")
 
 
   accessCreateProgram() {
@@ -37,6 +38,8 @@ export class CreateProgramPage {
   }
 
   clickSubmitWithoutData(){
-    this.createProgramButton().click() 
+    this.createProgramButton().click()
+    this.requiredFieldsAreFlagged().should("be.visible")
+
   }
 }
