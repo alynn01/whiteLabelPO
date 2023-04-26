@@ -39,10 +39,10 @@ export class CreateUserPage {
       this.openCreateUserPopup().click();
     }
   
-    enterDetails() {
+    enterDetails(email) {
       this.firstNameField().type("Amayindi");
       this.lastNameField().type("Lynn");
-      this.emailEntryField().type("hamaz@qa.team");
+      this.emailEntryField().type(email);
       this.seearchNig().type("Nigeria");
       this.selectNigeria().click();
       this.phoneNumber().type("9072609472");
