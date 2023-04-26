@@ -25,4 +25,16 @@ describe("Create User", () => {
     cy.contains("emailAddress must be a valid email")
 
   });
+
+  it("Test that user is unable to invite a new user to the organization without details", () => {
+    newUserPage.accessEndUserPage();
+    newUserPage.createEndUser();
+    cy.get(".button-text").contains("Create user").click();
+    cy.contains("Email is required")
+    cy.contains("Phone number is required")
+    cy.contains("First name is required")
+    cy.contains("Last name is required")
+    cy.contains("Gender is required")
+    cy.contains("Program is required")
+  });
 });

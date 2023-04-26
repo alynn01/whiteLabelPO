@@ -6,7 +6,7 @@ export class FundUserPage{
     programDropdown = () => cy.get(`input[placeholder="Program"]`);
     selectProgram = () => cy.get('.sc-lllmON > :nth-child(8)').contains("Auto Ama Test");
     enterAmount = () => cy.get(`input[name="amount"]`);
-    fundProgramButton = () => cy.get('.button-text').contains('Fund program');
+    fundUsersButton = () => cy.get('.button-text').contains('Fund users');
     selectAcctNumber = () => cy.get(`div[name="accountNo"]`);
     pickAccount = () => cy.get('.sc-lllmON > :nth-child(2)').contains("Lynn Ama");
 
@@ -18,11 +18,12 @@ export class FundUserPage{
 
     }
 
-    enterFundDetails(){
+    enterFundDetails(fundingAmount){
       this.programDropdown().click()
       this.selectProgram().click()
       this.selectAcctNumber().click()
       this.pickAccount().click()
-      this.enterAmount().type('1')
+      this.enterAmount().type(fundingAmount)
+      this.fundUsersButton().should("be.visible")
     }
 }
