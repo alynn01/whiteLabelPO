@@ -14,6 +14,15 @@ describe("Create User", () => {
   it("Test that user is able to invite a new user to the organization", () => {
     newUserPage.accessEndUserPage();
     newUserPage.createEndUser();
-    newUserPage.enterDetails();
+    newUserPage.enterDetails(getPO.email);
+  });
+
+  it("Test that user is unable to invite a new user to the organization with invalid email", () => {
+    newUserPage.accessEndUserPage();
+    newUserPage.createEndUser();
+    newUserPage.enterDetails("hamaz@qa.");
+    cy.get(".button-text").contains("Create user").click();
+    cy.contains("emailAddress must be a valid email")
+
   });
 });
