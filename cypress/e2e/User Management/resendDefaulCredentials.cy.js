@@ -12,7 +12,7 @@ import {
   const newUserPage = new CreateUserPage();
   const resendDetailsPage = new ResendDefaultCreedntialsPage();
   
-  describe("Resend default credentials", () => {
+  describe("Resend default credentials and view accounts details", () => {
     beforeEach(() => {
       loginPage.accessLoginModal();
       loginPage.login(getPO.email, getPO.password);
@@ -25,6 +25,15 @@ import {
       resendDetailsPage.selectResendCredentials();
       cy.contains("Password already changed")
     });
+
+    it("Test that user is able to see accounts and cards tied to a user", () => {
+        newUserPage.accessEndUserPage();
+        cy.get("table").contains("td", "Active").first().should("be.visible");
+        deactivateUserPage.clickFirstItem();
+        resendDetailsPage.clickAccountAndCards();
+        cy.contains("USD - 5221323472").should("be.visible")
+        cy.get(`[class="card-id"]`).contains("12707635").should("be.visible")
+      });
   
   });
   
