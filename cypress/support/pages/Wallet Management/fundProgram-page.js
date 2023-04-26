@@ -16,10 +16,11 @@ export class FundProgramUserPage{
         this.popupHeader().should('be.visible')
     }
 
-    enterFundDetails(){
+    enterFundDetails(fundingAmount){
         this.programDropdown().click({force : true})
         this.selectProgram().click({force : true})
-        this.enterAmount().type('1')
+        this.enterAmount().type(fundingAmount)
         this.fundProgramButton().should('be.visible')
     }
+
 }
