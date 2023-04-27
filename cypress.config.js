@@ -16,31 +16,19 @@ module.exports = defineConfig({
   env: {
     MAILOSAUR_API_KEY: "{API KEY}",
   },
-  reporter: "cypress-multi-reporters",
-  reporterOptions: {
-      reporterEnabled: "cypress-mochawesome-reporter, mocha-junit-reporter",
-      cypressMochawesomeReporterReporterOptions: {
-      reportDir: "cypress/reports",
-      charts: true,
-      reportPageTitle: "My Test Suite",
-      embeddedScreenshots: true,
-      inlineAssets: true
-    },
-    mochaJunitReporterReporterOptions: {
-      mochaFile: "cypress/reports/junit/results-[hash].xml"
-    }
-  },
-  video: false,
+  reporter: 'cypress-mochawesome-reporter',
 
   e2e: {
     setupNodeEvents(on, config) {
       
-
+      require('cypress-mochawesome-reporter/plugin')(on);
       on("task", {
         log(message) {
           console.log(message);
           return null;
+          
         },
+        
       });
 
       const baseUrl =

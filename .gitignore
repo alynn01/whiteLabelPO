@@ -2,3 +2,6 @@ node_modules
 cypress.env.json
 .DS_store
 screenshots
+reports
+videos
+
