@@ -4,7 +4,7 @@
   "description": "This is the Program Admin Portal test",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run HOST=https://devcompanyadmin.essolo.com/"
+    "test": "cypress run HOST=https://devcompanyadmin.essolo.com/"
   },
   "author": "",
   "license": "ISC",
