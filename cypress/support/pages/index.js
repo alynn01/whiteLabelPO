@@ -6,4 +6,5 @@ export * from "./shared/login-page";
 export * from "./Program Management/moreDetails-page";
 export * from "./User Management/deactivateUser-page";
 export * from "./User Management/resendDefaultCredentials-page";
-export * from "./Administrator/createAdmin-page"
+export * from "./Administrator/createAdmin-page";
+export * from "./Administrator/changeRole-page"
