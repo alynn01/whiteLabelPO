@@ -4,4 +4,6 @@ cypress.env.json
 screenshots
 reports
 videos
+integration
+plugins
 
