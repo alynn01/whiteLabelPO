@@ -21,7 +21,7 @@ module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
       
-      require('cypress-mochawesome-reporter/plugin')(on);
+      require('cypress-mochawesome-reporter/plugin/src/installLogsPrinter')(on);
       on("task", {
         log(message) {
           console.log(message);
