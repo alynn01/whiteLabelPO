@@ -11,7 +11,7 @@ describe("Create User", () => {
     loginPage.login(getPO.email, getPO.password);
   });
 
-  it("Test that user is able to invite a new user to the organization", () => {
+  it("Test that user is able to complete the form", () => {
     newUserPage.accessEndUserPage();
     newUserPage.createEndUser();
     newUserPage.enterDetails(getPO.email);
@@ -36,4 +36,13 @@ describe("Create User", () => {
     cy.contains("Gender is required");
     cy.contains("Program is required");
   });
+
+  it("Test that user is able to invite a new user to the organization", () => {
+    newUserPage.accessEndUserPage();
+    newUserPage.createEndUser();
+    newUserPage.enterDetails(getPO.email);
+    cy.get(".button-text").contains("Create user").click();
+    cy.contains("Username 'amatest@yopmail.com' is already taken.").should("be.visible")
+  });
+
 });
