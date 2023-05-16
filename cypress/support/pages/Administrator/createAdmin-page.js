@@ -22,8 +22,8 @@ export class CreateAdminPage{
     }
 
     completeEntryFields(emailValue){
-        this.firstNameField().type("Roberto");
-        this.lastNameField().type("Carlos");
+        this.firstNameField().type("Chuks");
+        this.lastNameField().type("Enedeh");
         this.emailField().type(emailValue);
         this.selectCountry().click();
         this.searchCountryFiled().type("Colombia");
