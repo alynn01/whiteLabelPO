@@ -44,7 +44,7 @@ module.exports = defineConfig({
       const baseUrl =
         config.env.APP_ENV === "production"
           ? "https://companyadmin.essolo.com/"
-          : "https://devcompanyadmin-safex.essolo.com/";
+          : "https://stagingcompanyadmin.essolo.com/";
 
       config.baseUrl = baseUrl;
 
