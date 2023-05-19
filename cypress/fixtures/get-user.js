@@ -4,7 +4,7 @@ const users =
   Cypress.env("APP_ENV") === "production" ? productionUsers : stagingUsers;
 
 
-const getUnkownUser = () => users.find((user) => user.role === role.unknown);
+const getSupportAdmin = () => users.find((user) => user.role === role.supportAdmin);
 
 /**
  * @param {role} - role of the user
@@ -22,7 +22,7 @@ const getAdmin = () =>
 export {
   role,
   getCardHolder,
-  getUnkownUser,
+  getSupportAdmin,
   getProgramOwner,
   getAdmin
 };

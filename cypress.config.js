@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const { beforeRunHook, afterRunHook } = require('cypress-mochawesome-reporter/lib');
 
 module.exports = defineConfig({
   chromeWebSecurity: false,
@@ -17,26 +18,35 @@ module.exports = defineConfig({
     MAILOSAUR_API_KEY: "{API KEY}",
   },
   reporter: 'cypress-mochawesome-reporter',
+  reporterOptions: {
+    charts: true,
+    reportPageTitle: 'custom-title',
+    embeddedScreenshots: true,
+    inlineAssets: true,
+    saveAllAttempts: false,
+  },
 
   e2e: {
     setupNodeEvents(on, config) {
       
       require('cypress-mochawesome-reporter/plugin')(on);
-      on("task", {
-        log(message) {
-          console.log(message);
-          return null;
-          
-        },
-        
+
+      on('before:run', async (details) => {
+        console.log('override before:run');
+        await beforeRunHook(details);
+      });
+
+      on('after:run', async () => {
+        console.log('override after:run');
+        await afterRunHook();
       });
 
       const baseUrl =
         config.env.APP_ENV === "production"
           ? "https://companyadmin.essolo.com/"
-          : "https://devcompanyadmin-safex.essolo.com/";
+          : "https://devcompanyadmin-pasha.essolo.com/";
 
-      config.baseUrl = baseUrl;
+      config.baseUrl = baseUrl; 
 
       return config;
     },

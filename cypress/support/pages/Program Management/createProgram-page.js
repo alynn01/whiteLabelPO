@@ -14,7 +14,7 @@ export class CreateProgramPage {
   selectUSD = () => cy.get(".sc-iJnaPW").contains("USD");
   createProgramButton = () => cy.get(".button-text").contains("Create program");
   requiredFieldsAreFlagged = () =>
-    cy.get(".sc-GhhNo > div > span").contains("Program name is required");
+    cy.contains("Program name is required");
 
   accessCreateProgram() {
     this.quickActionDropdown().click({ force: true });

@@ -14,8 +14,8 @@ export const role = {
   export const stagingUsers = [
     {
       role: role.programOwner,
-      email: "amatest@yopmail.com",
-      password: "P@$sw0rd",
+      email: "autotester@qa.team",
+      password: "Test@123",
       
     },
     {
@@ -25,9 +25,9 @@ export const role = {
     },
     
     {
-      role: role.unknown,
-      name: "Unknown User",
-      email: "unknown_user@morressier.com",
+      role: role.supportAdmin,
+      email: "harrysup@qa.team",
+      password: "Test@123"
     },
     
   
@@ -48,9 +48,9 @@ export const role = {
       },
       
       {
-        role: role.unknown,
-        name: "Unknown User",
-        email: "unknown_user@morressier.com",
+        role: role.supportAdmin,
+        email: "harrysup@qa.team",
+        password: "Test@123"
       },
         
     

@@ -1,7 +1,7 @@
 export class FundProgramUserPage {
   walletMenuItem = () => cy.get('[href="/dashboard/wallet"] > span');
   quickActionDropdown = () =>
-    cy.get(`[class*="placeholder"]`).contains("Quick actions");
+  cy.get('.button-text > span').contains("Quick actions");
   fundProgramDropdownItem = () =>
     cy.get(`div[type="button"]`).contains("Fund programs");
   programDropdown = () => cy.get(`input[placeholder="Program"]`);
@@ -15,13 +15,15 @@ export class FundProgramUserPage {
   accessFundProgramPage() {
     this.walletMenuItem().click();
     this.quickActionDropdown().click({ force: true });
-    this.fundProgramDropdownItem().click();
+    cy.contains("Fund program").click();
+    //this.fundProgramDropdownItem().click();
     this.popupHeader().should("be.visible");
   }
 
   enterFundDetails(fundingAmount) {
     this.programDropdown().click({ force: true });
-    this.selectProgram().click({ force: true });
+    cy.get('.sc-iJnaPW > :nth-child(2)').contains("Verney - 1332122783 (USD)").click();
+    //this.selectProgram().click({ force: true });
     this.enterAmount().type(fundingAmount);
     this.fundProgramButton().should("be.visible");
   }

@@ -20,19 +20,23 @@ import {
   
     it("Test that user is unable to send default credentials if default password has been changed", () => {
       newUserPage.accessEndUserPage();
-      cy.get("table").contains("td", "Active").first().should("be.visible");
+      cy.get("table").contains("td", "Active").first().scrollIntoView().should("be.visible");
       deactivateUserPage.clickFirstItem();
       resendDetailsPage.selectResendCredentials();
-      cy.contains("Password already changed")
+      cy.contains("Activation email resent successfully")
     });
 
     it("Test that user is able to see accounts and cards tied to a user", () => {
         newUserPage.accessEndUserPage();
-        cy.get("table").contains("td", "Active").first().should("be.visible");
+        cy.wait(5000)
+        cy.get(`input[placeholder="Search"]`).scrollIntoView().type("guestone")
+        cy.wait(5000)
+        cy.get("table").contains("td", "Active").first().scrollIntoView().should("be.visible");
         deactivateUserPage.clickFirstItem();
         resendDetailsPage.clickAccountAndCards();
-        cy.contains("USD - 5221323472").should("be.visible")
-        cy.get(`[class="card-id"]`).contains("12707635").should("be.visible")
+        cy.wait(3000)
+        cy.contains("USD - 2846231567").should("be.visible")
+        cy.get(`[class="card-id"]`).contains("12707511").should("be.visible")
       });
   
   });

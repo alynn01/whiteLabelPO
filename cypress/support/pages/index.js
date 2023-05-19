@@ -8,4 +8,5 @@ export * from "./User Management/deactivateUser-page";
 export * from "./User Management/resendDefaultCredentials-page";
 export * from "./Administrator/createAdmin-page";
 export * from "./Administrator/changeRole-page";
-export * from "./Transactions/viewTransaction-page"
+export * from "./Transactions/viewTransaction-page";
+export * from "./Ticket and Support/ticketAndSupport-page"

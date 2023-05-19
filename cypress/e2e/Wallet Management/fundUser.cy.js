@@ -30,8 +30,6 @@ describe("Fund User", () => {
     fundUser.accessFundUserPopup();
     fundUser.enterFundDetails(maximumNumber);
     cy.get(".button-text").contains("Fund users").click();
-    cy.contains("Insufficient balance in USD program account").should(
-      "be.visible"
-    );
+    cy.get(`.Toastify__toast-body>div:last-child`, { timeout: 5000 }).should('contain', 'Insufficient balance in USD program account');
   });
 });

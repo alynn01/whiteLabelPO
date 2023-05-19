@@ -18,7 +18,7 @@ describe("Deactivate and Activate User", () => {
 
   it("Test that user is able to deactivate a user in the organization", () => {
     newUserPage.accessEndUserPage();
-    cy.get("table").contains("td", "Active").first().should("be.visible");
+    cy.get("table").contains("td", "Inactive").first().scrollIntoView().should("be.visible");
     deactivateUserPage.clickFirstItem();
     deactivateUserPage.deactivateUser();
     cy.contains("User deactivated successfully");
@@ -26,7 +26,7 @@ describe("Deactivate and Activate User", () => {
 
   it("Test that user is able to activate a user in the organization", () => {
     newUserPage.accessEndUserPage();
-    cy.get("table").contains("td", "Deactivated").first().should("be.visible");
+    cy.get("table").contains("td", "Deactivated").first().scrollIntoView().should("be.visible");
     deactivateUserPage.clickFirstItem();
     deactivateUserPage.activateUser();
     cy.contains("User reactivated successfully.");

@@ -4,21 +4,21 @@ export class CreateUserPage {
   loginButton = () => cy.get(`[class*="button-text"]`).contains("Sign in");
   welcomeMessage = () => cy.contains("Welcome back, ");
   endUserMenuItem = () =>
-    cy.get('[href="/dashboard/users"] > span').contains("End users");
+  cy.get('[href="/dashboard/users"] > span').contains("End Users");
   createUserDropdown = () =>
     cy.get(`[class*="placeholder"]`).contains("Create new user");
   openCreateUserPopup = () => cy.contains("Single user creation");
   firstNameField = () => cy.get('input[name="firstName"]');
   lastNameField = () => cy.get('input[name="lastName"]');
   emailEntryField = () => cy.get('input[name="emailAddress"]');
-  seearchNig = () => cy.get('input[id="dropdownchild"]');
+  seearchNig = () => cy.get('input[placeholder="Int code"]');
   selectNigeria = () => cy.contains("Nigeria");
   phoneNumber = () => cy.get('input[name="phoneNumber"]');
   gender = () => cy.get(`[class*="placeholder"]`).contains("Gender");
   male = () => cy.contains("Male");
   selectProgram = () =>
     cy.get(`[class*="placeholder"]`).contains("Select program");
-  chooseProgram = () => cy.contains("Amas Program");
+  chooseProgram = () => cy.get('.sc-iJnaPW > :nth-child(6)').contains("Verney");
   createUserButton = () => cy.get(".button-text").contains("Create user");
 
   accessPOPortal(email, password, url) {
