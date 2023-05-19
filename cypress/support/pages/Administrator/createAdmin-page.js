@@ -9,7 +9,7 @@ export class CreateAdminPage{
     searchCountryFiled = () => cy.get('input[placeholder="search"]');
     phoneNumberFiled = () => cy.get('input[placeholder="Select Phone Number"]');
     selectRole = () => cy.get(`[class="placeholder"]`).contains("Select role");
-    pickRole = () => cy.get('.sc-lllmON > :nth-child(3)');
+    pickRole = () => cy.get('.sc-iJnaPW > :nth-child(3)');
     createAdminButton = () => cy.get(`[class="button-text"]`).contains("Create administrator")
 
 

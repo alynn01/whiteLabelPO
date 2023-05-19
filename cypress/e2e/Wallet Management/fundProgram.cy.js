@@ -29,8 +29,6 @@ describe("Fund Program", () => {
     fundProgram.accessFundProgramPage();
     fundProgram.enterFundDetails(maximumNumber);
     cy.get(".button-text").contains("Fund program").click();
-    cy.contains("Insufficient balance in USD company account").should(
-      "be.visible"
-    );
+    cy.get(`.Toastify__toast-body>div:last-child`, { timeout: 5000 }).should('contain', 'Insufficient balance in USD company account');
   });
 });

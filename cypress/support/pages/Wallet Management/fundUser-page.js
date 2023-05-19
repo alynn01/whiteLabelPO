@@ -1,18 +1,18 @@
 export class FundUserPage {
   walletMenuItem = () => cy.get('[href="/dashboard/wallet"] > span');
   quickActionDropdown = () =>
-    cy.get(`[class*="placeholder"]`).contains("Quick actions");
+    cy.get(`[class="button-text"]`).contains("Quick actions");
   fundUserDropdownItem = () =>
-    cy.get(`div[type="button"]`).contains("Fund users");
+    cy.contains("Fund user(s)");
   popupHeader = () =>
     cy.get(".modal-header-content > span").contains("Fund user accounts");
   programDropdown = () => cy.get(`input[placeholder="Program"]`);
   selectProgram = () =>
-    cy.get(".sc-lllmON > :nth-child(8)").contains("Auto Ama Test");
+   cy.get('.sc-iJnaPW > :nth-child(2)');
   enterAmount = () => cy.get(`input[name="amount"]`);
   fundUsersButton = () => cy.get(".button-text").contains("Fund users");
   selectAcctNumber = () => cy.get(`div[name="accountNo"]`);
-  pickAccount = () => cy.get(".sc-lllmON > :nth-child(2)").contains("Lynn Ama");
+  pickAccount = () => cy.get('.sc-iJnaPW > :nth-child(3)');
 
   accessFundUserPopup() {
     this.walletMenuItem().click();

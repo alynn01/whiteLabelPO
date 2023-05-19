@@ -42,7 +42,7 @@ describe("Create User", () => {
     newUserPage.createEndUser();
     newUserPage.enterDetails(getPO.email);
     cy.get(".button-text").contains("Create user").click();
-    cy.contains("Username 'amatest@yopmail.com' is already taken.").should("be.visible")
+    cy.contains("Username 'autotester@qa.team' is already taken.").should("be.visible")
   });
 
 });

@@ -1,7 +1,7 @@
 export class MoreDetailsPage {
-  programMenuItem = () => cy.get('[href="/dashboard/program"] > span');
+  programMenuItem = () => cy.get('[href="/dashboard/programs"] > span');
   pageDescription = () =>
-    cy.get(".sc-ipEyDJ > span").contains("View and manage all programs");
+    cy.contains("View and manage all programs");
   moreDetailsLink = () =>
     cy.get('[class="row-detail-button"]').contains("More details");
   programDetailsHeading = () => cy.contains("Program details");
@@ -26,7 +26,7 @@ export class MoreDetailsPage {
   removeUserFromProgramTitle = () =>
     cy.get(".modal-header-content > span").contains("Remove User from Program");
   viewAdministratorsLink = () => cy.contains("View administrators");
-  administratorsEmailAddress = () => cy.contains("amatest@yopmail.com");
+  administratorsEmailAddress = () => cy.contains("Phlat@Yopmail.Com");
   viewEndUsersLink = () => cy.contains("View end users");
   endUsersEmail = () => cy.contains("autouser@qa.team");
 
@@ -38,7 +38,7 @@ export class MoreDetailsPage {
   openProgramDetails() {
     this.moreDetailsLink().click();
     this.programDetailsHeading().should("be.visible");
-    this.moreOptionsDropdown().click();
+    //this.moreOptionsDropdown().click();
   }
 
   deactivateProgram() {
