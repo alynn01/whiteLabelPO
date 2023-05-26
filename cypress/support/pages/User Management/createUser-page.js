@@ -18,7 +18,7 @@ export class CreateUserPage {
   male = () => cy.contains("Male");
   selectProgram = () =>
     cy.get(`[class*="placeholder"]`).contains("Select program");
-  chooseProgram = () => cy.get('.sc-iJnaPW > :nth-child(6)').contains("Verney");
+  chooseProgram = () => cy.contains("Borno");
   createUserButton = () => cy.get(".button-text").contains("Create user");
 
   accessPOPortal(email, password, url) {
