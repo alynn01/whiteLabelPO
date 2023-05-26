@@ -4,7 +4,7 @@ export class CreateUserPage {
   loginButton = () => cy.get(`[class*="button-text"]`).contains("Sign in");
   welcomeMessage = () => cy.contains("Welcome back, ");
   endUserMenuItem = () =>
-  cy.get('[href="/dashboard/users"] > span').contains("End Users");
+    cy.get('[href="/dashboard/users"] > span').contains("End Users");
   createUserDropdown = () =>
     cy.get(`[class*="placeholder"]`).contains("Create new user");
   openCreateUserPopup = () => cy.contains("Single user creation");
