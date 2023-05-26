@@ -4,7 +4,13 @@
   "description": "This is the Program Admin Portal test",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress run --env APP_ENV=staging"
+    "test": "npx cypress run --env APP_ENV=staging",
+    "cy-client:stage": "npx cypress open --env APP_ENV=staging",
+    "cy-client:prod": "npx cypress open --env APP_ENV=production",
+    "cy_run": "HOST=https://devcompanyadmin.essolo.com/ cypress run --browser chrome",
+    "auth": "npm run cy_run -- --spec 'cypress/e2e/administrator/**/*",
+    "cards": "npm run cy_run -- --spec 'cypress/e2e/auth/**/*",
+    "profiles": "npm run cy_run -- --spec 'cypress/e2e/transactions/**/*"
   },
   "author": "",
   "license": "ISC",
