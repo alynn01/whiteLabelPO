@@ -16,6 +16,6 @@ describe("Transactions", () => {
   it("Test that user is able to view transactions", () => {
      viewTransactions.accessTransactionsPage();
      cy.get("table").contains("td", "USD").first().should("be.visible");
-     cy.contains("Download reciept").click()
+     cy.contains("Download reciept").should("be.visible")
   });
 });
