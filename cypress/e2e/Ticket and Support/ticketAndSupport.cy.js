@@ -62,4 +62,29 @@ describe("Ticket and Support", () => {
     ticketsPage.accessTicketsPage();
     cy.get("table").contains("td", "Hold").first().should("be.visible");
   });
+
+  it("Test that user is unable to submit new ticket with an attachment that isn't supported", () => {
+    ticketsPage.accessTicketsPage();
+    ticketsPage.accessCreateTicketPage();
+    ticketsPage.enterValidDetailsAndSubmit();
+    ticketsPage.uploadInvalidFile();
+    cy.contains("uploadthis.png has a file type that is not supported for upload").should("be.visible")
+  });
+
+  it("Test that user is unable to submit new ticket with an attachment that is supported but larger than 2MB", () => {
+    ticketsPage.accessTicketsPage();
+    ticketsPage.accessCreateTicketPage();
+    ticketsPage.enterValidDetailsAndSubmit();
+    ticketsPage.uploadLargeFile();
+    cy.contains("Transactions-history.pdf has a file size larger than 2MB").should("be.visible");
+  });
+
+  it("Test that user is able to submit new ticket with an attachment that is supported and lesser than 2MB", () => {
+    ticketsPage.accessTicketsPage();
+    ticketsPage.accessCreateTicketPage();
+    ticketsPage.enterValidDetailsAndSubmit();
+    ticketsPage.uploadValidFile();
+    ticketsPage.clickSubmitButton();
+    cy.contains("Ticket created successfully").should("be.visible");
+  });
 });

@@ -97,4 +97,23 @@ export class TicketAndSupportPage {
     cy.contains("Ticket on hold successfully!").should("be.visible");
     this.closePopup().click();
   }
+
+   uploadInvalidFile(){
+    const fileToUpload = "uploadthis.png";
+    cy.get('input[type="file"]').attachFile(fileToUpload)
+  }
+
+  clickSubmitButton(){
+    this.submitTicketButton().click();
+  }
+
+  uploadValidFile(){
+    const fileToUpload = "sta.pdf";
+    cy.get('input[type="file"]').attachFile(fileToUpload)
+  }
+
+  uploadLargeFile(){
+    const fileToUpload = "Transactions-history.pdf";
+    cy.get('input[type="file"]').attachFile(fileToUpload)
+  }
 }
