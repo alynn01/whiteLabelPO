@@ -20,15 +20,15 @@ describe("Fund Program", () => {
 
   it("Test that user is unable to fund program if he doesnt select program or amount", () => {
     fundProgram.accessFundProgramPage();
-    cy.get(".button-text").contains("Fund program").click();
-    cy.contains("Program is required").should("be.visible");
+    cy.get(".button-text").contains("Transfer").click();
+    cy.contains("program is required").should("be.visible");
     cy.contains("Amount is required").should("be.visible");
   });
 
   it("Test that user is to fund program if he enters an amount more than what is available in the wallet", () => {
     fundProgram.accessFundProgramPage();
     fundProgram.enterFundDetails(maximumNumber);
-    cy.get(".button-text").contains("Fund program").click();
+    cy.get(".button-text").contains("Transfer").click();
     cy.get(`.Toastify__toast-body>div:last-child`, { timeout: 5000 }).should('contain', 'Insufficient balance in USD company account');
   });
 });

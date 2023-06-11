@@ -8,7 +8,7 @@ export class FundProgramUserPage {
   selectProgram = () =>
     cy.get(".sc-lllmON > :nth-child(3)").contains("Amas Program");
   enterAmount = () => cy.get(`input[name="amount"]`);
-  fundProgramButton = () => cy.get(".button-text").contains("Fund program");
+  fundProgramButton = () => cy.get(".button-text").contains("Transfer");
   popupHeader = () =>
     cy.get(".modal-header-content > span").contains("Fund program accounts");
 
@@ -22,7 +22,7 @@ export class FundProgramUserPage {
 
   enterFundDetails(fundingAmount) {
     this.programDropdown().click({ force: true });
-    cy.get('.sc-iJnaPW > :nth-child(2)').contains("Verney - 1332122783 (USD)").click();
+    cy.get('.sc-iJnaPW > :nth-child(3)').contains("Verney - 1332122783 (USD)").click();
     //this.selectProgram().click({ force: true });
     this.enterAmount().type(fundingAmount);
     this.fundProgramButton().should("be.visible");
