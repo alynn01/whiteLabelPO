@@ -8,9 +8,9 @@ export class FundUserPage {
     cy.get(".modal-header-content > span").contains("Fund user accounts");
   programDropdown = () => cy.get(`input[placeholder="Program"]`);
   selectProgram = () =>
-   cy.get('.sc-iJnaPW > :nth-child(2)');
+   cy.get('.sc-iJnaPW > :nth-child(3)');
   enterAmount = () => cy.get(`input[name="amount"]`);
-  fundUsersButton = () => cy.get(".button-text").contains("Fund users");
+  fundUsersButton = () => cy.get(".button-text").contains("Transfer");
   selectAcctNumber = () => cy.get(`div[name="accountNo"]`);
   pickAccount = () => cy.get('.sc-iJnaPW > :nth-child(3)');
 
