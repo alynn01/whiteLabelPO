@@ -12,7 +12,7 @@ export class FundUserPage {
   enterAmount = () => cy.get(`input[name="amount"]`);
   fundUsersButton = () => cy.get(".button-text").contains("Transfer");
   selectAcctNumber = () => cy.get(`input[placeholder="Username - ClientID"]`);
-  pickAccount = () => cy.get('.sc-bYMpWt > :nth-child(2)');
+  pickAccount = () => cy.contains('127082');
   
 
   accessFundUserPopup() {

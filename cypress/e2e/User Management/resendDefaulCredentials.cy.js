@@ -23,7 +23,7 @@ import {
       cy.get("table").contains("td", "Active").first().scrollIntoView().should("be.visible");
       deactivateUserPage.clickFirstItem();
       resendDetailsPage.selectResendCredentials();
-      cy.contains("Password already changed")
+      cy.contains("Activation email resent successfully")
     });
 
     it("Test that user is able to see accounts and cards tied to a user", () => {
