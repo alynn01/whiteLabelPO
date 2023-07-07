@@ -42,13 +42,18 @@ describe("Program More Details", () => {
     programDetails.openRemoveUser();
   });
 
-  // it("Test that user is able to view administrators", () => {
-  //   programDetails.accessProgramPage();
-  //   programDetails.openAdministratorsPage();
-  // });
 
-  // it("Test that user is able to view end users", () => {
-  //   programDetails.accessProgramPage();
-  //   programDetails.openEndUsersPage();
-  // });
+  it("Test that user is able to view list of transactions", () =>{
+    programDetails.accessProgramPage();
+    programDetails.viewTransactionsPage();
+  })
+  it("Test that user is able to view administrators", () => {
+    programDetails.accessProgramPage();
+    programDetails.openAdministratorsPage();
+  });
+
+  it("Test that user is able to view end users", () => {
+    programDetails.accessProgramPage();
+    programDetails.openEndUsersPage();
+  });
 });
