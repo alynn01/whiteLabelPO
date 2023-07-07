@@ -29,6 +29,7 @@ export class MoreDetailsPage {
   administratorsEmailAddress = () => cy.contains("Phlat@Yopmail.Com");
   viewEndUsersLink = () => cy.contains("View end users");
   endUsersEmail = () => cy.contains("autouser@qa.team");
+  transactionsTab = () => cy.get(`[class="tab-text"]`).contains("TRANSACTIONS")
 
   accessProgramPage() {
     this.programMenuItem().click();
@@ -89,5 +90,13 @@ export class MoreDetailsPage {
     this.programDetailsHeading().should("be.visible");
     this.viewEndUsersLink().click();
     this.endUsersEmail().should("be.visible");
+  }
+
+  viewTransactionsPage(){
+    cy.get(`input[placeholder="Search"]`).type("Verney");
+    cy.wait(3000)
+    cy.get('.row-detail-button').contains("More details").click();
+    this.transactionsTab().click()
+    cy.get('table').contains("Card Funding (Wallet)").should('be.visible')
   }
 }
