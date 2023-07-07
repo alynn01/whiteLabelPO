@@ -82,7 +82,7 @@ export class TicketAndSupportPage {
     cy.contains("Open ticket").click();
     this.resolutionComment().type("Oga abeg go rest");
     this.selectActionDropdown().contains("Select status").click();
-    cy.get(".sc-iJnaPW > :nth-child(2)").contains("Open").click();
+    cy.get('.sc-bYMpWt > :nth-child(2)').contains("Open").click();
     cy.wait(2000);
     this.resolveTicketButton().click({ force: true });
     cy.contains("Ticket opened successfully!").should("be.visible");

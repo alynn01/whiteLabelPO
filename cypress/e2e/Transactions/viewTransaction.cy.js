@@ -22,6 +22,7 @@ describe("Transactions", () => {
   it("Test that user is able to use the filter options on the table", () => {
     viewTransactions.accessTransactionsPage();
     cy.get("table").contains("td", "USD").first().should("be.visible");
+    viewTransactions.sortByDate();
     
   })
 });

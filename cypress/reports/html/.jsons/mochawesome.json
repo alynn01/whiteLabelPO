@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2023-07-06T23:31:09.709Z",
-    "end": "2023-07-06T23:31:32.247Z",
-    "duration": 22538,
+    "start": "2023-07-07T06:47:26.820Z",
+    "end": "2023-07-07T06:48:32.234Z",
+    "duration": 65414,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "a4367c77-682d-4e61-806f-a8c5e31008d6",
+      "uuid": "6e08b60d-8ddf-488e-9fe9-aa111ebe37c7",
       "title": "",
       "fullFile": "cypress/e2e/Administrator/changeRole.cy.js",
       "file": "cypress/e2e/Administrator/changeRole.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "04586122-f312-4d00-8c32-2df5789ababa",
+          "uuid": "51c99042-b757-4364-b207-ac2ddc7688b8",
           "title": "Change Role",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Test that user is able to change role from audit admin to program admin",
               "fullTitle": "Change Role Test that user is able to change role from audit admin to program admin",
               "timedOut": null,
-              "duration": 17900,
+              "duration": 60249,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos\",\n  \"value\": \"cypress/e2e/Administrator/changeRole.cy.js\"\n}",
               "code": "createAdmin.accessAdminPage();\ncy.get('table').scrollIntoView();\ncy.get(\"table\").contains(\"td\", \"Audit Admin\").first().should(\"be.visible\");\nchangeRole.clickSecondItem(newRole);\ncreateAdmin.accessAdminPage();\ncy.get('table').scrollIntoView();\ncy.get(\"table\").contains(\"td\", \"Program Management Admin\").first().should(\"be.visible\");",
               "err": {},
-              "uuid": "4fa6c200-13d7-448b-9574-fd4ea22059f7",
-              "parentUUID": "04586122-f312-4d00-8c32-2df5789ababa",
+              "uuid": "4c31e33e-bbc8-4e14-9696-8c87a53a1394",
+              "parentUUID": "51c99042-b757-4364-b207-ac2ddc7688b8",
               "isHook": false,
               "skipped": false
             },
@@ -56,30 +56,30 @@
               "title": "Test that user is able to change role from program admin to audit admin",
               "fullTitle": "Change Role Test that user is able to change role from program admin to audit admin",
               "timedOut": null,
-              "duration": 4598,
+              "duration": 5123,
               "state": "passed",
-              "speed": "fast",
+              "speed": "medium",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos\",\n  \"value\": \"cypress/e2e/Administrator/changeRole.cy.js\"\n}",
               "code": "createAdmin.accessAdminPage();\ncy.get('table').scrollIntoView();\ncy.get(\"table\").contains(\"td\", \"Program Management Admin\").first().should(\"be.visible\");\nchangeRole.changeSelection(oldRole);\ncreateAdmin.accessAdminPage();\ncy.get('table').scrollIntoView();\ncy.get(\"table\").contains(\"td\", \"Audit Admin\").first().should(\"be.visible\");",
               "err": {},
-              "uuid": "1cc52846-5118-4f10-8f38-2cae50719e0c",
-              "parentUUID": "04586122-f312-4d00-8c32-2df5789ababa",
+              "uuid": "3f2f22da-806f-4cc2-8684-a165847ddc39",
+              "parentUUID": "51c99042-b757-4364-b207-ac2ddc7688b8",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "4fa6c200-13d7-448b-9574-fd4ea22059f7",
-            "1cc52846-5118-4f10-8f38-2cae50719e0c"
+            "4c31e33e-bbc8-4e14-9696-8c87a53a1394",
+            "3f2f22da-806f-4cc2-8684-a165847ddc39"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 22498,
+          "duration": 65372,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
