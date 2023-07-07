@@ -9,8 +9,8 @@ export class MoreDetailsPage {
     cy.get('[class="placeholder"]').contains("More options");
   deactivateLink = () => cy.contains("Deactivate program");
   createUserDropdown = () =>
-    cy.get('[class="placeholder"]').contains("Create new user");
-  singleUserDropdownItem = () => cy.contains("Single user creation");
+  cy.get(`[class="button-text"]`).contains("Create new user");
+  singleUserDropdownItem = () => cy.get('.sc-fIhvWL > :nth-child(1)').contains("Single user creation");;
   singleUserCreationTitle = () =>
     cy.get(".modal-header-content > span").contains("Single user creation");
   bulkUserDropdownItem = () => cy.contains("Bulk user creation");

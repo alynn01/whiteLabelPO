@@ -35,6 +35,8 @@ describe("Create User", () => {
     cy.contains("Last name is required");
     cy.contains("Gender is required");
     cy.contains("Program is required");
+    cy.contains("Date of Birth is required");
+    cy.contains("Country is required");
   });
 
   it("Test that user is able to invite a new user to the organization", () => {

@@ -21,8 +21,7 @@ describe("Fund User", () => {
   it("Test that user is unable to fund user if he doesnt enter the required details", () => {
     fundUser.accessFundUserPopup();
     cy.get(".button-text").contains("Transfer").click();
-    cy.contains("Program is required").should("be.visible");
-    cy.contains("Account number is required").should("be.visible");
+    cy.contains("Username - ClientID is required").should("be.visible");
     cy.contains("Amount is required").should("be.visible");
   });
 
@@ -30,6 +29,6 @@ describe("Fund User", () => {
     fundUser.accessFundUserPopup();
     fundUser.enterFundDetails(maximumNumber);
     cy.get(".button-text").contains("Transfer").click();
-    cy.get(`.Toastify__toast-body>div:last-child`, { timeout: 5000 }).should('contain', 'Insufficient balance in USD program account');
+    cy.get(`.Toastify__toast-body>div:last-child`, { timeout: 5000 }).should('contain', 'Insufficient balance in Pasha Group program account');
   });
 });

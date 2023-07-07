@@ -9,7 +9,7 @@ export class CreateAdminPage{
     searchCountryFiled = () => cy.get('input[placeholder="search"]');
     phoneNumberFiled = () => cy.get('input[placeholder="Select Phone Number"]');
     selectRole = () => cy.get(`[class="placeholder"]`).contains("Select role");
-    pickRole = () => cy.get('.sc-iJnaPW > :nth-child(3)');
+    // pickRole = () => cy.get('.sc-bYMpWt > :nth-child(2)');
     createAdminButton = () => cy.get(`[class="button-text"]`).contains("Create administrator")
 
 
@@ -30,7 +30,7 @@ export class CreateAdminPage{
         cy.contains("Colombia").click()
         this.phoneNumberFiled().type("5678578590")
         this.selectRole().click()
-        this.pickRole().contains("Audit Admin").click({force : true})
+        cy.get('.sc-bYMpWt > :nth-child(3)').contains("Audit Admin").click({force : true})
         this.createAdminButton().should("be.visible")
     }
 }

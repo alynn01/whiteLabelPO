@@ -5,14 +5,15 @@ export class FundUserPage {
   fundUserDropdownItem = () =>
     cy.contains("Fund user(s)");
   popupHeader = () =>
-    cy.get(".modal-header-content > span").contains("Fund user accounts");
+    cy.get(".modal-header-content > span").contains("Fund user card(s)");
   programDropdown = () => cy.get(`input[placeholder="Program"]`);
   selectProgram = () =>
-   cy.get('.sc-iJnaPW > :nth-child(3)');
+  cy.get('.sc-kMjNwy').contains("Pasha");
   enterAmount = () => cy.get(`input[name="amount"]`);
   fundUsersButton = () => cy.get(".button-text").contains("Transfer");
-  selectAcctNumber = () => cy.get(`div[name="accountNo"]`);
-  pickAccount = () => cy.get('.sc-iJnaPW > :nth-child(3)');
+  selectAcctNumber = () => cy.get(`input[placeholder="Username - ClientID"]`);
+  pickAccount = () => cy.get('.sc-bYMpWt > :nth-child(2)');
+  
 
   accessFundUserPopup() {
     this.walletMenuItem().click();
@@ -23,6 +24,8 @@ export class FundUserPage {
 
   enterFundDetails(fundingAmount) {
     this.programDropdown().click();
+    cy.wait(300)
+    this.programDropdown().type("Pasha");
     this.selectProgram().click();
     this.selectAcctNumber().click();
     this.pickAccount().click();
