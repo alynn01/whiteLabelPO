@@ -1,7 +1,7 @@
 export class FundProgramUserPage {
   walletMenuItem = () => cy.get('[href="/dashboard/wallet"] > span');
   quickActionDropdown = () =>
-  cy.get('.button-text > span').contains("Quick actions");
+  cy.get('[class=button-text]').contains("Quick actions");
   fundProgramDropdownItem = () =>
     cy.get(`div[type="button"]`).contains("Fund programs");
   programDropdown = () => cy.get(`input[placeholder="Program"]`);
@@ -11,6 +11,7 @@ export class FundProgramUserPage {
   fundProgramButton = () => cy.get(".button-text").contains("Transfer");
   popupHeader = () =>
     cy.get(".modal-header-content > span").contains("Fund program accounts");
+  programNameField = () => cy.get(`input[placeholder="Program"]`);
 
   accessFundProgramPage() {
     this.walletMenuItem().click();
@@ -22,7 +23,8 @@ export class FundProgramUserPage {
 
   enterFundDetails(fundingAmount) {
     this.programDropdown().click({ force: true });
-    cy.get('.sc-iJnaPW > :nth-child(3)').contains("Verney - 1332122783 (USD)").click();
+    this.programNameField().type("Verney")
+    cy.get('.sc-kMjNwy').contains("Verney - 1332122783 (USD)").click();
     //this.selectProgram().click({ force: true });
     this.enterAmount().type(fundingAmount);
     this.fundProgramButton().should("be.visible");

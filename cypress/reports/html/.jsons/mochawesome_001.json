@@ -1,0 +1,167 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-07-06T23:31:38.093Z",
+    "end": "2023-07-06T23:32:14.512Z",
+    "duration": 36419,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c86639f3-040c-4275-833a-53fab7748d80",
+      "title": "",
+      "fullFile": "cypress/e2e/Administrator/createAdmin.cy.js",
+      "file": "cypress/e2e/Administrator/createAdmin.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b81298b5-caec-4039-b067-a928290608df",
+          "title": "Create Admin",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test that user is unable to create program without required details",
+              "fullTitle": "Create Admin Test that user is unable to create program without required details",
+              "timedOut": null,
+              "duration": 24692,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos\",\n  \"value\": \"cypress/e2e/Administrator/createAdmin.cy.js\"\n}",
+              "code": "createAdmin.accessAdminPage();\ncreateAdmin.createAdminUser();\ncy.get(`[class=\"button-text\"]`).contains(\"Create administrator\").click();\ncy.contains(\"First name is required\").should(\"be.visible\");\ncy.contains(\"Email is required\").should(\"be.visible\");\ncy.contains(\"Last name is required\").should(\"be.visible\");\ncy.contains(\"Phone Number is required\").should(\"be.visible\");\ncy.contains(\"Role is required\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "4077f6d2-3fc5-4e8b-a5a4-05d4c5ba957f",
+              "parentUUID": "b81298b5-caec-4039-b067-a928290608df",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that user is able to complete the form successfully",
+              "fullTitle": "Create Admin Test that user is able to complete the form successfully",
+              "timedOut": null,
+              "duration": 3790,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos\",\n  \"value\": \"cypress/e2e/Administrator/createAdmin.cy.js\"\n}",
+              "code": "createAdmin.accessAdminPage();\ncreateAdmin.createAdminUser();\ncreateAdmin.completeEntryFields(validEmail);",
+              "err": {},
+              "uuid": "386b2f66-f26b-47d5-9f0b-8bcf3984c872",
+              "parentUUID": "b81298b5-caec-4039-b067-a928290608df",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that user is unable to complete the form successfully with invalid email",
+              "fullTitle": "Create Admin Test that user is unable to complete the form successfully with invalid email",
+              "timedOut": null,
+              "duration": 3402,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos\",\n  \"value\": \"cypress/e2e/Administrator/createAdmin.cy.js\"\n}",
+              "code": "createAdmin.accessAdminPage();\ncreateAdmin.createAdminUser();\ncreateAdmin.completeEntryFields(invalidEmail);\ncy.get(`[class=\"button-text\"]`).contains(\"Create administrator\").click();\ncy.contains(\"emailAddress must be a valid email\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "7a544dec-20e9-4e50-b2ec-7459cfacb6c1",
+              "parentUUID": "b81298b5-caec-4039-b067-a928290608df",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that user is unable to submit the form with email address of an existing user",
+              "fullTitle": "Create Admin Test that user is unable to submit the form with email address of an existing user",
+              "timedOut": null,
+              "duration": 4476,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos\",\n  \"value\": \"cypress/e2e/Administrator/createAdmin.cy.js\"\n}",
+              "code": "createAdmin.accessAdminPage();\ncreateAdmin.createAdminUser();\ncreateAdmin.completeEntryFields(validEmail);\ncy.get(`[class=\"button-text\"]`).contains(\"Create administrator\").click();\ncy.contains(\"Username 'robertoacrl@yopmail.com' is already taken.\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "9cbffcc2-8c59-4c46-ba65-d4abf44bbada",
+              "parentUUID": "b81298b5-caec-4039-b067-a928290608df",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4077f6d2-3fc5-4e8b-a5a4-05d4c5ba957f",
+            "386b2f66-f26b-47d5-9f0b-8bcf3984c872",
+            "7a544dec-20e9-4e50-b2ec-7459cfacb6c1",
+            "9cbffcc2-8c59-4c46-ba65-d4abf44bbada"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 36360,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

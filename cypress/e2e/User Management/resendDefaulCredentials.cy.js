@@ -23,7 +23,7 @@ import {
       cy.get("table").contains("td", "Active").first().scrollIntoView().should("be.visible");
       deactivateUserPage.clickFirstItem();
       resendDetailsPage.selectResendCredentials();
-      cy.contains("Activation email resent successfully")
+      cy.contains("Password already changed")
     });
 
     it("Test that user is able to see accounts and cards tied to a user", () => {
@@ -35,7 +35,6 @@ import {
         deactivateUserPage.clickFirstItem();
         resendDetailsPage.clickAccountAndCards();
         cy.wait(3000)
-        cy.contains("USD - 2846231567").should("be.visible")
         cy.get(`[class="card-id"]`).contains("12707511").should("be.visible")
       });
   

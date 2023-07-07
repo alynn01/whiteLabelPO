@@ -1,7 +1,7 @@
 export class CreateProgramPage {
   quickActionDropdown = () =>
-    cy.get(`[class*="placeholder"]`).contains("Quick actions");
-  createProgramItem = () => cy.contains("Create a new program");
+  cy.get('.button-text').contains("Quick actions");
+  createProgramItem = () => cy.contains("Create new program");
   pageTitle = () =>
     cy.get(".modal-header-content > span").contains("Create a new program");
   programName = () => cy.get('input[name="name"]');
@@ -11,7 +11,7 @@ export class CreateProgramPage {
   region = () => cy.get('input[placeholder="Program region"]');
   selectAfrica = () => cy.contains("Africa");
   selectNig = () => cy.contains("Nigeria");
-  selectUSD = () => cy.get(".sc-iJnaPW").contains("USD");
+  selectUSD = () => cy.get('.sc-kMjNwy').contains("USD");
   createProgramButton = () => cy.get(".button-text").contains("Create program");
   requiredFieldsAreFlagged = () =>
     cy.contains("Program name is required");
