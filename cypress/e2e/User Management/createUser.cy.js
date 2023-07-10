@@ -47,4 +47,11 @@ describe("Create User", () => {
     cy.contains("Username 'autotester@qa.team' is already taken.").should("be.visible")
   });
 
+  it("Test that the user is able to sort the list of users using filters", () => {
+    newUserPage.accessEndUserPage();
+    newUserPage.sortUserListByProgram();
+    newUserPage.sortUserListByRegion();
+    newUserPage.sortUserListByCountry();
+  })
+
 });

@@ -71,4 +71,44 @@ export class CreateUserPage {
     this.select08().click({force:true})
     this.createUserButton().should("be.visible");
   }
+
+
+  sortUserListByProgram(){
+    cy.get('table').contains("registration DATE");
+    cy.get('table').scrollIntoView();
+    cy.get(`[class="placeholder"]`).contains("Select Program").click();
+    cy.wait(3000)
+    cy.contains('Borno').click({force:true});
+    cy.get(`[class="btn_filter"]`).click()
+    cy.wait(3000)
+    cy.get('table').contains("Borno");
+    cy.get(`[class="reset_btn_icon"]`).click();
+    cy.get('table').contains("Verney");
+  }
+
+  sortUserListByRegion(){
+    cy.get('table').contains("registration DATE");
+    cy.get('table').scrollIntoView();
+    cy.wait(3000)
+    cy.get(`[class="placeholder"]`).contains("Select Region").click();
+    cy.contains('Africa').click({force:true});
+    cy.get(`[class="btn_filter"]`).click()
+    cy.wait(3000)
+    cy.get('table').contains("Borno");
+    cy.get(`[class="reset_btn_icon"]`).click();
+    cy.get('table').contains("Verney");
+  }
+
+  sortUserListByCountry(){
+    cy.get('table').contains("registration DATE");
+    cy.get('table').scrollIntoView();
+    cy.get(`input[placeholder="Select Country"]`).type('Nigeria')
+    cy.get('.sc-kMjNwy').contains('Nigeria').click();
+    cy.contains('Borno').click({force:true});
+    cy.get(`[class="btn_filter"]`).click()
+    cy.wait(3000)
+    cy.get('table').contains("Borno");
+    cy.get(`[class="reset_btn_icon"]`).click();
+    cy.get('table').contains("Verney");
+  }
 }

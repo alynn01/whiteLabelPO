@@ -26,9 +26,9 @@ export class MoreDetailsPage {
   removeUserFromProgramTitle = () =>
     cy.get(".modal-header-content > span").contains("Remove User from Program");
   viewAdministratorsLink = () => cy.contains("View administrators");
-  administratorsEmailAddress = () => cy.contains("Phlat@Yopmail.Com");
+  administratorsEmailAddress = () => cy.contains("phlat@yopmail.com");
   viewEndUsersLink = () => cy.contains("View end users");
-  endUsersEmail = () => cy.contains("autouser@qa.team");
+  endUsersEmail = () => cy.contains("sageh@yopmail.com");
   transactionsTab = () => cy.get(`[class="tab-text"]`).contains("TRANSACTIONS")
 
   accessProgramPage() {
@@ -89,6 +89,7 @@ export class MoreDetailsPage {
     this.moreDetailsLink().click();
     this.programDetailsHeading().should("be.visible");
     this.viewEndUsersLink().click();
+    cy.get('table').scrollIntoView();
     this.endUsersEmail().should("be.visible");
   }
 
