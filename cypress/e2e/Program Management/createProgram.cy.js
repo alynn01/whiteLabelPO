@@ -20,4 +20,12 @@ describe("Create Program", () => {
     createProgram.accessCreateProgram();
     createProgram.clickSubmitWithoutData();
   });
+
+  it("Test that user is able to create program", () => {
+    createProgram.accessCreateProgram();
+    createProgram.enterProgramDetails();
+    cy.get(".button-text").contains("Create Program").click();
+    cy.contains("Program created successfully").should("be.visible");
+  });
+
 });

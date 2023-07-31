@@ -16,11 +16,11 @@ describe("Create Admin", () => {
   it("Test that user is unable to create program without required details", () => {
      createAdmin.accessAdminPage();
      createAdmin.createAdminUser()
-     cy.get(`[class="button-text"]`).contains("Create administrator").click();
+     cy.get(`[class="button-text"]`).contains("Create Administrator").click();
      cy.contains("First name is required").should("be.visible")
      cy.contains("Email is required").should("be.visible")
      cy.contains("Last name is required").should("be.visible")
-     cy.contains("Phone Number is required").should("be.visible")
+     cy.contains("Phone is required").should("be.visible")
      cy.contains("Role is required").should("be.visible")
   });
 
@@ -34,15 +34,15 @@ describe("Create Admin", () => {
     createAdmin.accessAdminPage();
     createAdmin.createAdminUser();
     createAdmin.completeEntryFields(invalidEmail);
-    cy.get(`[class="button-text"]`).contains("Create administrator").click();
-    cy.contains("emailAddress must be a valid email").should("be.visible")
+    cy.get(`[class="button-text"]`).contains("Create Administrator").click();
+    cy.contains("Email must be a valid email").should("be.visible")
  });
 
  it("Test that user is unable to submit the form with email address of an existing user", () => {
     createAdmin.accessAdminPage();
     createAdmin.createAdminUser();
     createAdmin.completeEntryFields(validEmail);
-    cy.get(`[class="button-text"]`).contains("Create administrator").click();
+    cy.get(`[class="button-text"]`).contains("Create Administrator").click();
     cy.contains("Username 'robertoacrl@yopmail.com' is already taken.").should("be.visible")
  });
 });

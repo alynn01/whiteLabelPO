@@ -1,0 +1,167 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-07-26T11:11:32.971Z",
+    "end": "2023-07-26T11:11:58.592Z",
+    "duration": 25621,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4037a76c-0399-4bfe-93a0-73b3075f5d2d",
+      "title": "",
+      "fullFile": "cypress/e2e/Wallet Management/fundProgram.cy.js",
+      "file": "cypress/e2e/Wallet Management/fundProgram.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6ad4d6fa-81e1-4d34-a67f-3d9ec44b0651",
+          "title": "Fund Program",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test that user is able to navigate to fund program popup",
+              "fullTitle": "Fund Program Test that user is able to navigate to fund program popup",
+              "timedOut": null,
+              "duration": 5798,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos\",\n  \"value\": \"cypress/e2e/Wallet Management/fundProgram.cy.js\"\n}",
+              "code": "loginPage.login(getPO.email, getPO.password);\nfundProgram.accessFundProgramPage();\nfundProgram.enterFundDetails(minimumAmount);",
+              "err": {},
+              "uuid": "2ddd07bd-4d54-4e76-8295-59a7ec990ba7",
+              "parentUUID": "6ad4d6fa-81e1-4d34-a67f-3d9ec44b0651",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that user is unable to fund program if he doesnt select program or amount",
+              "fullTitle": "Fund Program Test that user is unable to fund program if he doesnt select program or amount",
+              "timedOut": null,
+              "duration": 2013,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos\",\n  \"value\": \"cypress/e2e/Wallet Management/fundProgram.cy.js\"\n}",
+              "code": "loginPage.login(getPO.email, getPO.password);\nfundProgram.accessFundProgramPage();\ncy.get(\".button-text\").contains(\"Transfer\").click();\ncy.contains(\"Program is required\").should(\"be.visible\");\ncy.contains(\"Amount is required\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "924493b6-41bd-4afd-b74e-2bf2fe93aaef",
+              "parentUUID": "6ad4d6fa-81e1-4d34-a67f-3d9ec44b0651",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that user is unable to fund program if he enters an amount more than what is available in the wallet",
+              "fullTitle": "Fund Program Test that user is unable to fund program if he enters an amount more than what is available in the wallet",
+              "timedOut": null,
+              "duration": 2485,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos\",\n  \"value\": \"cypress/e2e/Wallet Management/fundProgram.cy.js\"\n}",
+              "code": "loginPage.login(getPO.email, getPO.password);\nfundProgram.accessFundProgramPage();\nfundProgram.enterFundDetails(maximumNumber);\ncy.get(\".button-text\").contains(\"Transfer\").click();\ncy.get(`.Toastify__toast-body>div:last-child`, {\n  timeout: 5000\n}).should('contain', 'Insufficient balance in USD company account');",
+              "err": {},
+              "uuid": "9de2ae0a-928c-480e-b5e7-726b0bc6fc37",
+              "parentUUID": "6ad4d6fa-81e1-4d34-a67f-3d9ec44b0651",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that user is able to fund program successfully",
+              "fullTitle": "Fund Program Test that user is able to fund program successfully",
+              "timedOut": null,
+              "duration": 15221,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos\",\n  \"value\": \"cypress/e2e/Wallet Management/fundProgram.cy.js\"\n}",
+              "code": "loginPage.login(\"progowner.bbcseikz@mailosaur.io\", getPO.password);\nfundProgram.accessFundProgramPage();\nfundProgram.enterFundDetails(minimumAmount);\ncy.get(\".button-text\").contains(\"Transfer\").click();\ncy.wait(2000);\ncy.get(\".button-text\").contains(\"Yes, continue\").click();\ncy.wait(5000);\nfundProgram.getVerificationOTP().then(receivedOTP => {\n  cy.get(':nth-child(1) > .formInput').type(receivedOTP);\n});\ncy.get('.sc-bcXHqe > .button-text').contains(\"Proceed\").click();\ncy.contains(\"Program account funded successfully\").should('be.visible');\ncy.get('[class=\"button-text\"').contains(\"Go back to Wallet\").click();",
+              "err": {},
+              "uuid": "1efe97fb-8fdb-4a77-b186-cf2695b63fa5",
+              "parentUUID": "6ad4d6fa-81e1-4d34-a67f-3d9ec44b0651",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2ddd07bd-4d54-4e76-8295-59a7ec990ba7",
+            "924493b6-41bd-4afd-b74e-2bf2fe93aaef",
+            "9de2ae0a-928c-480e-b5e7-726b0bc6fc37",
+            "1efe97fb-8fdb-4a77-b186-cf2695b63fa5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 25517,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

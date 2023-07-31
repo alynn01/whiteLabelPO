@@ -1,35 +1,34 @@
 export class MoreDetailsPage {
   programMenuItem = () => cy.get('[href="/dashboard/programs"] > span');
   pageDescription = () =>
-    cy.contains("View and manage all programs");
+    cy.contains("VIEW AND MANAGE ALL PROGRAMS");
   moreDetailsLink = () =>
-    cy.get('[class="row-detail-button"]').contains("More details");
-  programDetailsHeading = () => cy.contains("Program details");
+    cy.get('[class="row-detail-button"]').contains("More Details");
+  programDetailsHeading = () => cy.contains("Program Details");
   moreOptionsDropdown = () =>
     cy.get('[class="placeholder"]').contains("More options");
   deactivateLink = () => cy.contains("Deactivate program");
   createUserDropdown = () =>
-  cy.get(`[class="button-text"]`).contains("Create new user");
-  singleUserDropdownItem = () => cy.get('.sc-fIhvWL > :nth-child(1)').contains("Single user creation");;
+  cy.get(`[class="button-text"]`).contains("Create New User");
+  singleUserDropdownItem = () => cy.contains("Single User Creation");;
   singleUserCreationTitle = () =>
-    cy.get(".modal-header-content > span").contains("Single user creation");
-  bulkUserDropdownItem = () => cy.contains("Bulk user creation");
+    cy.get(".modal-header-content > span").contains("Single User Creation");
+  bulkUserDropdownItem = () => cy.contains("Bulk User Creation");
   bulkUserCreationTitle = () =>
-    cy.get(".modal-header-content > span").contains("Bulk user creation");
-  addUserToProgramDropdownItem = () => cy.contains("Add user to program");
+    cy.get(".modal-header-content > span").contains("Bulk User Creation");
+  addUserToProgramDropdownItem = () => cy.contains("Add User to Program");
   addUserToProgramTitle = () =>
-    cy
-      .get(".modal-header-content > span")
+    cy.get(".modal-header-content > span")
       .contains("Add existing user to Program");
   removeUserFromProgramDropdownItem = () =>
-    cy.contains("Remove user from program");
+    cy.contains("Remove User from Program");
   removeUserFromProgramTitle = () =>
     cy.get(".modal-header-content > span").contains("Remove User from Program");
-  viewAdministratorsLink = () => cy.contains("View administrators");
+  viewAdministratorsLink = () => cy.contains("View Administrators");
   administratorsEmailAddress = () => cy.contains("phlat@yopmail.com");
-  viewEndUsersLink = () => cy.contains("View end users");
-  endUsersEmail = () => cy.contains("sageh@yopmail.com");
-  transactionsTab = () => cy.get(`[class="tab-text"]`).contains("TRANSACTIONS")
+  viewEndUsersLink = () => cy.contains("View End Users");
+  endUsersEmail = () => cy.contains("jfg@yopmail.com");
+  transactionsTab = () => cy.get(`[class="tab-text"]`).contains("Transactions")
 
   accessProgramPage() {
     this.programMenuItem().click();
@@ -96,8 +95,8 @@ export class MoreDetailsPage {
   viewTransactionsPage(){
     cy.get(`input[placeholder="Search"]`).type("Verney");
     cy.wait(3000)
-    cy.get('.row-detail-button').contains("More details").click();
+    cy.get('.row-detail-button').contains("More Details").click();
     this.transactionsTab().click()
-    cy.get('table').contains("Card Funding (Wallet)").should('be.visible')
+    cy.get('table').contains("Funding of program wallet").should('be.visible')
   }
 }

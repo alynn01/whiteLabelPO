@@ -8,22 +8,22 @@ export class CreateUserPage {
   endUserMenuItem = () =>
     cy.get('[href="/dashboard/users"] > span').contains("End Users");
   createUserDropdown = () =>
-    cy.get(`[class="button-text"]`).contains("Create new user");
-  openCreateUserPopup = () => cy.get('.sc-fIhvWL > :nth-child(1)').contains("Create new user");
+    cy.get(`[class="button-text"]`).contains("Create New User");
+  openCreateUserPopup = () => cy.get('.sc-eYqcxL > :nth-child(1)').contains("Create New User");
   firstNameField = () => cy.get('input[name="firstName"]');
   lastNameField = () => cy.get('input[name="lastName"]');
   emailEntryField = () => cy.get('input[name="emailAddress"]');
   clickIntDropdown = () => cy.get('[class="selected-flag"]');
-  searchNigeria = () => cy.get(`[class="search-box"]`);
+  searchNigeria = () => cy.get(':nth-child(2) > .sc-iJnaPW > .sc-gikAfH > .control-value');
   phoneNumber = () => cy.get('input[type="tel"]');
   gender = () => cy.get(`[class*="placeholder"]`).contains("Gender");
   middlename = () => cy.get('input[name="middleName"]');
   male = () => cy.contains("Male");
   selectProgram = () =>
-    cy.get(`input[placeholder="Select program"]`);
+    cy.get(`input[placeholder="Select Program"]`);
   chooseProgram = () => cy.get('.sc-kMjNwy').contains("Verney");
-  createUserButton = () => cy.get(`[class="button-text"]`).contains("Create user");
-  countryField = () => cy.get(`input[placeholder="Select country"]`);
+  createUserButton = () => cy.get(`[class="button-text"]`).contains("Create User");
+  countryField = () => cy.get(`[class="dropdownchild.control-value.searchable"]`).contains("Select Country");
   calenderField = () => cy.get(`input[placeholder="YYYY-MM-DD"]`);
   clickDefaultYear = () => cy.get(`[class="react-datepicker__year-read-view--selected-year"]`).contains("2007");
   calendarScroll = () => cy.get('.react-datepicker__year-dropdown > :nth-child(13)');
@@ -61,8 +61,6 @@ export class CreateUserPage {
     this.male().click();
     this.selectProgram().type("Verney");
     this.chooseProgram().click();
-    this.countryField().type("Nigeria")
-    cy.contains('Nigeria').click({force:true});
     this.calenderField().click({force:true});
     this.clickDefaultYear().click({force:true});
     times(8, () => {
@@ -74,7 +72,7 @@ export class CreateUserPage {
 
 
   sortUserListByProgram(){
-    cy.get('table').contains("registration DATE");
+    cy.get('table').contains("REGISTRATION DATE");
     cy.get('table').scrollIntoView();
     cy.get(`[class="placeholder"]`).contains("Select Program").click();
     cy.wait(3000)
@@ -87,7 +85,7 @@ export class CreateUserPage {
   }
 
   sortUserListByRegion(){
-    cy.get('table').contains("registration DATE");
+    cy.get('table').contains("REGISTRATION DATE");
     cy.get('table').scrollIntoView();
     cy.wait(3000)
     cy.get(`[class="placeholder"]`).contains("Select Region").click();
@@ -100,7 +98,7 @@ export class CreateUserPage {
   }
 
   sortUserListByCountry(){
-    cy.get('table').contains("registration DATE");
+    cy.get('table').contains("REGISTRATION DATE");
     cy.get('table').scrollIntoView();
     cy.get(`input[placeholder="Select Country"]`).type('Nigeria')
     cy.get('.sc-kMjNwy').contains('Nigeria').click();

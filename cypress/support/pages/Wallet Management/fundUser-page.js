@@ -32,4 +32,21 @@ export class FundUserPage {
     this.enterAmount().type(fundingAmount);
     this.fundUsersButton().should("be.visible");
   }
+
+  getVerificationOTP() {
+    const currentDate = new Date();
+    const threeMinutesAgo = new Date(currentDate.getTime() - 2 * 60 * 1000);
+    const serverId = "bbcseikz";
+    const searchCriteria = { sentTo: "progowner.bbcseikz@mailosaur.io", subject: 'OTP' };
+    return cy
+      .mailosaurGetMessage(serverId, searchCriteria, {
+        receivedAfter: threeMinutesAgo,
+        timeout: 40000,
+      })
+      .then((email) => {
+        expect(email.subject).to.equal("OTP");
+        return email.html.codes[0].value;
+      });
+      
+  }
 }

@@ -21,29 +21,29 @@ describe("Create User", () => {
     newUserPage.accessEndUserPage();
     newUserPage.createEndUser();
     newUserPage.enterDetails("hamaz@qa.");
-    cy.get(".button-text").contains("Create user").click();
-    cy.contains("emailAddress must be a valid email");
+    cy.get(".button-text").contains("Create User").click();
+    cy.contains("Input must be a valid email");
   });
 
   it("Test that user is unable to invite a new user to the organization without details", () => {
     newUserPage.accessEndUserPage();
     newUserPage.createEndUser();
-    cy.get(".button-text").contains("Create user").click();
+    cy.get(".button-text").contains("Create User").click();
     cy.contains("Email is required");
-    cy.contains("Phone number is required");
+    cy.contains("Phone is required");
     cy.contains("First name is required");
     cy.contains("Last name is required");
     cy.contains("Gender is required");
     cy.contains("Program is required");
-    cy.contains("Date of Birth is required");
+    cy.contains("Date of birth is required");
     cy.contains("Country is required");
   });
 
-  it("Test that user is able to invite a new user to the organization", () => {
+  it("Test that user is unable to invite a new user to the organization with thesame email address", () => {
     newUserPage.accessEndUserPage();
     newUserPage.createEndUser();
     newUserPage.enterDetails(getPO.email);
-    cy.get(".button-text").contains("Create user").click();
+    cy.get(".button-text").contains("Create User").click();
     cy.contains("Username 'autotester@qa.team' is already taken.").should("be.visible")
   });
 

@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 0,
+    "passes": 0,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-07-26T11:46:20.894Z",
+    "end": "2023-07-26T11:46:30.238Z",
+    "duration": 9344,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 2,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "15fe8592-2800-4bb7-962e-9447cce29a76",
+      "title": "",
+      "fullFile": "cypress/e2e/User Management/resendDefaulCredentials.cy.js",
+      "file": "cypress/e2e/User Management/resendDefaulCredentials.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2311a968-d73d-49c3-a4b7-2cc21c4be38b",
+          "title": "Resend default credentials and view accounts details",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test that user is unable to send default credentials if default password has been changed",
+              "fullTitle": "Resend default credentials and view accounts details Test that user is unable to send default credentials if default password has been changed",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "newUserPage.accessEndUserPage();\ncy.get(\"table\").contains(\"td\", \"Active\").first().scrollIntoView().should(\"be.visible\");\ndeactivateUserPage.clickFirstItem();\nresendDetailsPage.selectResendCredentials();\ncy.contains(\"Activation email resent successfully\");",
+              "err": {},
+              "uuid": "f220ef4d-4134-4207-b9cc-44ab6d961a79",
+              "parentUUID": "2311a968-d73d-49c3-a4b7-2cc21c4be38b",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "Test that user is able to see accounts and cards tied to a user",
+              "fullTitle": "Resend default credentials and view accounts details Test that user is able to see accounts and cards tied to a user",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "newUserPage.accessEndUserPage();\ncy.wait(5000);\ncy.get(`input[placeholder=\"Search\"]`).scrollIntoView().type(\"guestone\");\ncy.wait(5000);\ncy.get(\"table\").contains(\"td\", \"Active\").first().scrollIntoView().should(\"be.visible\");\ndeactivateUserPage.clickFirstItem();\nresendDetailsPage.clickAccountAndCards();\ncy.wait(3000);\ncy.get(`[class=\"card-id\"]`).contains(\"12707511\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "02499067-de71-414b-bf58-0ea8b74161d9",
+              "parentUUID": "2311a968-d73d-49c3-a4b7-2cc21c4be38b",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [
+            "f220ef4d-4134-4207-b9cc-44ab6d961a79",
+            "02499067-de71-414b-bf58-0ea8b74161d9"
+          ],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -15,7 +15,7 @@ module.exports = defineConfig({
   },
 
   env: {
-    MAILOSAUR_API_KEY: "{API KEY}",
+    MAILOSAUR_API_KEY: "I5b0HDwZ6lXfIEalGl3SPWYZyFOUIAcy",
   },
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {

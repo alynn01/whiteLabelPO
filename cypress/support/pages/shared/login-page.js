@@ -3,11 +3,11 @@ import { sharedData } from "../../../fixtures/index";
 export class LoginPage {
   emailField = () => cy.get(`input[name="email"]`);
   passwordField = () => cy.get(`input[name="password"]`);
-  loginButton = () => cy.get(`[class="button-text"]`).contains("Sign in");
+  loginButton = () => cy.get(`[class="button-text"]`).contains("Sign In");
 
   accessLoginModal() {
     cy.visit(sharedData.paths.login);
-    cy.contains("Gain access. Change your life!");
+    cy.contains("Gain Access");
   }
 
   clickLogin = () => {
