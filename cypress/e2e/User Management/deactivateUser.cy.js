@@ -29,6 +29,6 @@ describe("Deactivate and Activate User", () => {
     cy.get("table").contains("td", "Deactivated").first().scrollIntoView().should("be.visible");
     deactivateUserPage.clickFirstItem();
     deactivateUserPage.activateUser();
-    cy.contains("User reactivated successfully.");
+    cy.contains("User reactivated successfully");
   });
 });

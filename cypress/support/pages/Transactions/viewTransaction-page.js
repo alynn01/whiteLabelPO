@@ -21,6 +21,6 @@ export class ViewTransactionPage{
         this.selectSixth().click();
         this.selectSeventh().click();
         this.filterButton().click();
-        cy.get('table').contains("2023-07-03").should('be.visible')
+        cy.get('table').contains("2023-06-07").should('be.visible')
     }
 }

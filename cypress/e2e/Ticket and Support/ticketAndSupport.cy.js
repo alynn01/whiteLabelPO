@@ -8,7 +8,7 @@ const getSA = getSupportAdmin();
 describe("Ticket and Support", () => {
   beforeEach(() => {
     loginPage.accessLoginModal();
-    loginPage.login(getSA.email, getSA.password);
+    loginPage.login('pomsia02@yopmail.com', "Test@123");
   });
 
   it("Test that user is able to view the tickets list page", () => {
@@ -55,6 +55,13 @@ describe("Ticket and Support", () => {
     cy.get("table").contains("td", "Open").first().should("be.visible");
   });
 
+  it("Test that user is able to reassign ticket from one level to another", () => {
+    ticketsPage.accessTicketsPage();
+    cy.get("table").contains("td", "Open").first().should("be.visible");
+    ticketsPage.reassignTicket();
+    cy.get(`.Toastify__toast-body>div:last-child`, { timeout: 5000 }).should('contain', 'Ticket level updated successfully!');
+  });
+
   it("Test that user is able to hold a ticket", () => {
     ticketsPage.accessTicketsPage();
     cy.get("table").contains("td", "Open").first().should("be.visible");
@@ -87,4 +94,5 @@ describe("Ticket and Support", () => {
     ticketsPage.clickSubmitButton();
     cy.contains("Ticket created successfully").should("be.visible");
   });
+
 });

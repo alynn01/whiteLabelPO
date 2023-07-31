@@ -12,12 +12,12 @@ export class DeactivateUserPage {
   deactivateUser() {
     this.deactivateButton().contains("Deactivate").click();
     this.reasonField().type("I just no like you");
-    this.continueButton().contains("Yes continue").click();
+    this.continueButton().contains("Yes, continue").click();
   }
 
   activateUser() {
     this.activateUserButton().contains("Reactivate").click();
     this.reasonField().type("Oya sorry come back");
-    this.continueButton().contains("Yes continue").click();
+    this.continueButton().contains("Yes, continue").click();
   }
 }

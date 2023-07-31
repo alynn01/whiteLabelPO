@@ -1,0 +1,344 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 11,
+    "passes": 0,
+    "pending": 0,
+    "failures": 11,
+    "start": "2023-07-26T10:13:29.927Z",
+    "end": "2023-07-26T10:59:31.501Z",
+    "duration": 2761574,
+    "testsRegistered": 11,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4c2c3679-f9f1-4167-bbd7-242eff756cc0",
+      "title": "",
+      "fullFile": "cypress/e2e/Ticket and Support/ticketAndSupport.cy.js",
+      "file": "cypress/e2e/Ticket and Support/ticketAndSupport.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "75f72d11-4ecf-4335-b6e9-8363c27f4b2e",
+          "title": "Ticket and Support",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test that user is able to view the tickets list page",
+              "fullTitle": "Ticket and Support Test that user is able to view the tickets list page",
+              "timedOut": null,
+              "duration": 81937,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress/e2e/Ticket and Support/ticketAndSupport.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to view the tickets list page (failed).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to view the tickets list page (failed) (attempt 2).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to view the tickets list page (failed) (attempt 3).png\"\n        }\n      ]\n    ]\n  }\n]",
+              "code": "ticketsPage.accessTicketsPage();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 80000ms: Expected to find element: `[href=\"/dashboard/tickets\"] > span`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 80000ms: Expected to find element: `[href=\"/dashboard/tickets\"] > span`, but never found it.\n    at TicketAndSupportPage.eval [as ticketTab] (webpack:///./cypress/support/pages/Ticket and Support/ticketAndSupport-page.js:2:23)\n    at TicketAndSupportPage.accessTicketsPage (webpack:///./cypress/support/pages/Ticket and Support/ticketAndSupport-page.js:29:9)\n    at Context.eval (webpack:///./cypress/e2e/Ticket and Support/ticketAndSupport.cy.js:15:16)",
+                "diff": null
+              },
+              "uuid": "390933b9-5fd3-43a7-934f-a01e39f2256d",
+              "parentUUID": "75f72d11-4ecf-4335-b6e9-8363c27f4b2e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that user is able to view the create ticket page",
+              "fullTitle": "Ticket and Support Test that user is able to view the create ticket page",
+              "timedOut": null,
+              "duration": 82895,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress/e2e/Ticket and Support/ticketAndSupport.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to view the create ticket page (failed).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to view the create ticket page (failed) (attempt 2).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to view the create ticket page (failed) (attempt 3).png\"\n        }\n      ]\n    ]\n  }\n]",
+              "code": "ticketsPage.accessTicketsPage();\nticketsPage.accessCreateTicketPage();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'View and manage all tickets' within the element: <span> but never did.",
+                "estack": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'View and manage all tickets' within the element: <span> but never did.\n    at TicketAndSupportPage.accessTicketsPage (webpack:///./cypress/support/pages/Ticket and Support/ticketAndSupport-page.js:30:21)\n    at Context.eval (webpack:///./cypress/e2e/Ticket and Support/ticketAndSupport.cy.js:19:16)",
+                "diff": null
+              },
+              "uuid": "9c6c7b8b-7890-44b6-8246-08324693c444",
+              "parentUUID": "75f72d11-4ecf-4335-b6e9-8363c27f4b2e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that user is unable to submit new ticket without filling the necessary details",
+              "fullTitle": "Ticket and Support Test that user is unable to submit new ticket without filling the necessary details",
+              "timedOut": null,
+              "duration": 82711,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress/e2e/Ticket and Support/ticketAndSupport.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is unable to submit new ticket without filling the necessary details (failed).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is unable to submit new ticket without filling the necessary details (failed) (attempt 2).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is unable to submit new ticket without filling the necessary details (failed) (attempt 3).png\"\n        }\n      ]\n    ]\n  }\n]",
+              "code": "ticketsPage.accessTicketsPage();\nticketsPage.accessCreateTicketPage();\ncy.get('[class=\"button-text\"]').contains(\"Submit ticket \").click();\n//cy.contains(\"Please fill necessary fields\")",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'View and manage all tickets' within the element: <span> but never did.",
+                "estack": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'View and manage all tickets' within the element: <span> but never did.\n    at TicketAndSupportPage.accessTicketsPage (webpack:///./cypress/support/pages/Ticket and Support/ticketAndSupport-page.js:30:21)\n    at Context.eval (webpack:///./cypress/e2e/Ticket and Support/ticketAndSupport.cy.js:24:16)",
+                "diff": null
+              },
+              "uuid": "fbde584e-af6c-4b61-9fbc-b3e89af64889",
+              "parentUUID": "75f72d11-4ecf-4335-b6e9-8363c27f4b2e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that user is able to submit new ticket after filling the necessary details",
+              "fullTitle": "Ticket and Support Test that user is able to submit new ticket after filling the necessary details",
+              "timedOut": null,
+              "duration": 82426,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress/e2e/Ticket and Support/ticketAndSupport.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to submit new ticket after filling the necessary details (failed).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to submit new ticket after filling the necessary details (failed) (attempt 2).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to submit new ticket after filling the necessary details (failed) (attempt 3).png\"\n        }\n      ]\n    ]\n  }\n]",
+              "code": "ticketsPage.accessTicketsPage();\nticketsPage.accessCreateTicketPage();\nticketsPage.enterValidDetailsAndSubmit();\ncy.get('[class=\"button-text\"]').contains(\"Submit ticket \").click();\ncy.contains(\"Ticket created successfully\").should(\"be.visible\");\ncy.get(\"table\").contains(\"td\", \"Open\").first().should(\"be.visible\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'View and manage all tickets' within the element: <span> but never did.",
+                "estack": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'View and manage all tickets' within the element: <span> but never did.\n    at TicketAndSupportPage.accessTicketsPage (webpack:///./cypress/support/pages/Ticket and Support/ticketAndSupport-page.js:30:21)\n    at Context.eval (webpack:///./cypress/e2e/Ticket and Support/ticketAndSupport.cy.js:31:16)",
+                "diff": null
+              },
+              "uuid": "277d84be-24b3-4644-b4fa-cb1788c49785",
+              "parentUUID": "75f72d11-4ecf-4335-b6e9-8363c27f4b2e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that user is able to comment on a created ticket",
+              "fullTitle": "Ticket and Support Test that user is able to comment on a created ticket",
+              "timedOut": null,
+              "duration": 82421,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress/e2e/Ticket and Support/ticketAndSupport.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to comment on a created ticket (failed).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to comment on a created ticket (failed) (attempt 2).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to comment on a created ticket (failed) (attempt 3).png\"\n        }\n      ]\n    ]\n  }\n]",
+              "code": "ticketsPage.accessTicketsPage();\nticketsPage.commentOnTicket();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'View and manage all tickets' within the element: <span> but never did.",
+                "estack": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'View and manage all tickets' within the element: <span> but never did.\n    at TicketAndSupportPage.accessTicketsPage (webpack:///./cypress/support/pages/Ticket and Support/ticketAndSupport-page.js:30:21)\n    at Context.eval (webpack:///./cypress/e2e/Ticket and Support/ticketAndSupport.cy.js:40:16)",
+                "diff": null
+              },
+              "uuid": "7f7eaa73-f4bd-455b-8b2f-6dec8972eded",
+              "parentUUID": "75f72d11-4ecf-4335-b6e9-8363c27f4b2e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that user is able to close a created ticket",
+              "fullTitle": "Ticket and Support Test that user is able to close a created ticket",
+              "timedOut": null,
+              "duration": 82658,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress/e2e/Ticket and Support/ticketAndSupport.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to close a created ticket (failed).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to close a created ticket (failed) (attempt 2).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to close a created ticket (failed) (attempt 3).png\"\n        }\n      ]\n    ]\n  }\n]",
+              "code": "ticketsPage.accessTicketsPage();\nticketsPage.closeTicket();\nticketsPage.accessTicketsPage();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'View and manage all tickets' within the element: <span> but never did.",
+                "estack": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'View and manage all tickets' within the element: <span> but never did.\n    at TicketAndSupportPage.accessTicketsPage (webpack:///./cypress/support/pages/Ticket and Support/ticketAndSupport-page.js:30:21)\n    at Context.eval (webpack:///./cypress/e2e/Ticket and Support/ticketAndSupport.cy.js:45:16)",
+                "diff": null
+              },
+              "uuid": "e531d97a-397c-46d3-911c-bbaf043859b3",
+              "parentUUID": "75f72d11-4ecf-4335-b6e9-8363c27f4b2e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that user is able to reopen closed ticket",
+              "fullTitle": "Ticket and Support Test that user is able to reopen closed ticket",
+              "timedOut": null,
+              "duration": 82661,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress/e2e/Ticket and Support/ticketAndSupport.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to reopen closed ticket (failed).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to reopen closed ticket (failed) (attempt 2).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to reopen closed ticket (failed) (attempt 3).png\"\n        }\n      ]\n    ]\n  }\n]",
+              "code": "ticketsPage.accessTicketsPage();\ncy.get(\"table\").contains(\"td\", \"Closed\").first().should(\"be.visible\");\nticketsPage.reopenTicket();\nticketsPage.accessTicketsPage();\ncy.get(\"table\").contains(\"td\", \"Open\").first().should(\"be.visible\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'View and manage all tickets' within the element: <span> but never did.",
+                "estack": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'View and manage all tickets' within the element: <span> but never did.\n    at TicketAndSupportPage.accessTicketsPage (webpack:///./cypress/support/pages/Ticket and Support/ticketAndSupport-page.js:30:21)\n    at Context.eval (webpack:///./cypress/e2e/Ticket and Support/ticketAndSupport.cy.js:51:16)",
+                "diff": null
+              },
+              "uuid": "d60946e5-9b87-4c18-a93e-53398ad9280a",
+              "parentUUID": "75f72d11-4ecf-4335-b6e9-8363c27f4b2e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that user is able to hold a ticket",
+              "fullTitle": "Ticket and Support Test that user is able to hold a ticket",
+              "timedOut": null,
+              "duration": 82618,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress/e2e/Ticket and Support/ticketAndSupport.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to hold a ticket (failed).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to hold a ticket (failed) (attempt 2).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to hold a ticket (failed) (attempt 3).png\"\n        }\n      ]\n    ]\n  }\n]",
+              "code": "ticketsPage.accessTicketsPage();\ncy.get(\"table\").contains(\"td\", \"Open\").first().should(\"be.visible\");\nticketsPage.holdTicket();\nticketsPage.accessTicketsPage();\ncy.get(\"table\").contains(\"td\", \"Hold\").first().should(\"be.visible\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'View and manage all tickets' within the element: <span> but never did.",
+                "estack": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'View and manage all tickets' within the element: <span> but never did.\n    at TicketAndSupportPage.accessTicketsPage (webpack:///./cypress/support/pages/Ticket and Support/ticketAndSupport-page.js:30:21)\n    at Context.eval (webpack:///./cypress/e2e/Ticket and Support/ticketAndSupport.cy.js:59:16)",
+                "diff": null
+              },
+              "uuid": "e48abf0a-ee8b-4331-86f8-c9e6af2822f7",
+              "parentUUID": "75f72d11-4ecf-4335-b6e9-8363c27f4b2e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that user is unable to submit new ticket with an attachment that isn't supported",
+              "fullTitle": "Ticket and Support Test that user is unable to submit new ticket with an attachment that isn't supported",
+              "timedOut": null,
+              "duration": 82709,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress/e2e/Ticket and Support/ticketAndSupport.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is unable to submit new ticket with an attachment that isn't supported (failed).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is unable to submit new ticket with an attachment that isn't supported (failed) (attempt 2).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is unable to submit new ticket with an attachment that isn't supported (failed) (attempt 3).png\"\n        }\n      ]\n    ]\n  }\n]",
+              "code": "ticketsPage.accessTicketsPage();\nticketsPage.accessCreateTicketPage();\nticketsPage.enterValidDetailsAndSubmit();\nticketsPage.uploadInvalidFile();\ncy.contains(\"uploadthis.png has a file type that is not supported for upload\").should(\"be.visible\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'View and manage all tickets' within the element: <span> but never did.",
+                "estack": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'View and manage all tickets' within the element: <span> but never did.\n    at TicketAndSupportPage.accessTicketsPage (webpack:///./cypress/support/pages/Ticket and Support/ticketAndSupport-page.js:30:21)\n    at Context.eval (webpack:///./cypress/e2e/Ticket and Support/ticketAndSupport.cy.js:67:16)",
+                "diff": null
+              },
+              "uuid": "42bc7644-9d12-44c0-8238-9e9f04d84602",
+              "parentUUID": "75f72d11-4ecf-4335-b6e9-8363c27f4b2e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that user is unable to submit new ticket with an attachment that is supported but larger than 2MB",
+              "fullTitle": "Ticket and Support Test that user is unable to submit new ticket with an attachment that is supported but larger than 2MB",
+              "timedOut": null,
+              "duration": 82692,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress/e2e/Ticket and Support/ticketAndSupport.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is unable to submit new ticket with an attachment that is supported but larger than 2MB (failed).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is unable to submit new ticket with an attachment that is supported but larger than 2MB (failed) (attempt 2).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is unable to submit new ticket with an attachment that is supported but larger than 2MB (failed) (attempt 3).png\"\n        }\n      ]\n    ]\n  }\n]",
+              "code": "ticketsPage.accessTicketsPage();\nticketsPage.accessCreateTicketPage();\nticketsPage.enterValidDetailsAndSubmit();\nticketsPage.uploadLargeFile();\ncy.contains(\"Transactions-history.pdf has a file size larger than 2MB\").should(\"be.visible\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'View and manage all tickets' within the element: <span> but never did.",
+                "estack": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'View and manage all tickets' within the element: <span> but never did.\n    at TicketAndSupportPage.accessTicketsPage (webpack:///./cypress/support/pages/Ticket and Support/ticketAndSupport-page.js:30:21)\n    at Context.eval (webpack:///./cypress/e2e/Ticket and Support/ticketAndSupport.cy.js:75:16)",
+                "diff": null
+              },
+              "uuid": "4a0477e9-8dbb-453d-9103-c6255019dfd7",
+              "parentUUID": "75f72d11-4ecf-4335-b6e9-8363c27f4b2e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that user is able to submit new ticket with an attachment that is supported and lesser than 2MB",
+              "fullTitle": "Ticket and Support Test that user is able to submit new ticket with an attachment that is supported and lesser than 2MB",
+              "timedOut": null,
+              "duration": 82674,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress/e2e/Ticket and Support/ticketAndSupport.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to submit new ticket with an attachment that is supported and lesser than 2MB (failed).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to submit new ticket with an attachment that is supported and lesser than 2MB (failed) (attempt 2).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/Ticket and Support/ticketAndSupport.cy.js/Ticket and Support -- Test that user is able to submit new ticket with an attachment that is supported and lesser than 2MB (failed) (attempt 3).png\"\n        }\n      ]\n    ]\n  }\n]",
+              "code": "ticketsPage.accessTicketsPage();\nticketsPage.accessCreateTicketPage();\nticketsPage.enterValidDetailsAndSubmit();\nticketsPage.uploadValidFile();\nticketsPage.clickSubmitButton();\ncy.contains(\"Ticket created successfully\").should(\"be.visible\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'View and manage all tickets' within the element: <span> but never did.",
+                "estack": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'View and manage all tickets' within the element: <span> but never did.\n    at TicketAndSupportPage.accessTicketsPage (webpack:///./cypress/support/pages/Ticket and Support/ticketAndSupport-page.js:30:21)\n    at Context.eval (webpack:///./cypress/e2e/Ticket and Support/ticketAndSupport.cy.js:83:16)",
+                "diff": null
+              },
+              "uuid": "a7ddf855-f177-4051-bacb-b4ff2cd29c39",
+              "parentUUID": "75f72d11-4ecf-4335-b6e9-8363c27f4b2e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "390933b9-5fd3-43a7-934f-a01e39f2256d",
+            "9c6c7b8b-7890-44b6-8246-08324693c444",
+            "fbde584e-af6c-4b61-9fbc-b3e89af64889",
+            "277d84be-24b3-4644-b4fa-cb1788c49785",
+            "7f7eaa73-f4bd-455b-8b2f-6dec8972eded",
+            "e531d97a-397c-46d3-911c-bbaf043859b3",
+            "d60946e5-9b87-4c18-a93e-53398ad9280a",
+            "e48abf0a-ee8b-4331-86f8-c9e6af2822f7",
+            "42bc7644-9d12-44c0-8238-9e9f04d84602",
+            "4a0477e9-8dbb-453d-9103-c6255019dfd7",
+            "a7ddf855-f177-4051-bacb-b4ff2cd29c39"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 908402,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,9 +1,9 @@
 export class TicketAndSupportPage {
   ticketTab = () => cy.get('[href="/dashboard/tickets"] > span');
   pageTitle = () =>
-    cy.get(".sc-csuSiG > span").contains("View and manage all tickets");
+    cy.get(".sc-csuSiG > span").contains("VIEW AND MANAGE ALL TICKETS");
   createTicketButton = () =>
-    cy.get('[class="button-text"]').contains("Create a new ticket ");
+    cy.get('[class="button-text"]').contains("Create New Ticket ");
   createPageTitle = () => cy.contains("CREATE A SUPPORT TICKET");
   submitTicketButton = () =>
     cy.get('[class="button-text"]').contains("Submit ticket ");
@@ -22,8 +22,9 @@ export class TicketAndSupportPage {
   commentField = () => cy.get(`[class="comment_input"]`);
   selectActionDropdown = () => cy.get(`[class="action-text"]`);
   resolveTicketButton = () =>
-    cy.get(".sc-kDvujY > .sc-bcXHqe > .button-text").contains("Resolve ticket");
+    cy.get(".sc-kDvujY > .sc-bcXHqe > .button-text").contains("Resolve Ticket");
   closePopup = () => cy.get(".modal-header-content > :nth-child(3) > img");
+  reAssignDropdownItem = () => cy.get('.sc-ifSILs > :nth-child(2)').contains("Reassign Ticket");
 
   accessTicketsPage() {
     this.ticketTab().click();
@@ -40,7 +41,8 @@ export class TicketAndSupportPage {
     cy.contains("KYC").click();
     cy.wait(3000);
     this.selectProgram().click();
-    cy.contains("Borno").click();
+    cy.contains("Verney").scrollIntoView();
+    cy.contains("Verney").click();
     cy.wait(3000);
     this.selectAffectedUsers().click();
     cy.contains("Garba Bello").click();
@@ -54,22 +56,22 @@ export class TicketAndSupportPage {
   closeTicket() {
     cy.get("table").contains("td", "Open").first().should("be.visible");
     this.elipsis().click();
-    this.moredetailsDropdown().contains("More details").click();
-    this.moreOptionsButton().contains("More options").click();
-    this.moredetailsDropdown().contains("Resolve ticket").click();
+    this.moredetailsDropdown().contains("More Details").click();
+    this.moreOptionsButton().contains("More Options").click();
+    this.moredetailsDropdown().contains("Resolve Ticket").click();
     this.resolutionComment().type("Oga abeg go rest");
-    this.selectActionDropdown().contains("Select status").click();
+    this.selectActionDropdown().contains("Select Status").click();
     cy.contains("Closed").click();
     cy.wait(2000);
     this.resolveTicketButton().click({ force: true });
-    cy.contains("Ticket closed successfully!").should("be.visible");
+    cy.contains("Ticket closed successfully").should("be.visible");
     this.closePopup().click();
   }
 
   commentOnTicket() {
     cy.get("table").contains("td", "Open").first().should("be.visible");
     this.elipsis().click();
-    this.moredetailsDropdown().contains("More details").click();
+    this.moredetailsDropdown().contains("More Details").click();
     this.commentField().type("this is automated test response");
     cy.get(`[class="button-text"]`).contains("Send").click();
     cy.contains("Comment created successfully").should("be.visible");
@@ -77,24 +79,24 @@ export class TicketAndSupportPage {
 
   reopenTicket() {
     this.elipsis().click();
-    this.moredetailsDropdown().contains("More details").click();
-    this.moreOptionsButton().contains("More options").click();
+    this.moredetailsDropdown().contains("More Details").click();
+    this.moreOptionsButton().contains("More Options").click();
     cy.contains("Open ticket").click();
     this.resolutionComment().type("Oga abeg go rest");
-    this.selectActionDropdown().contains("Select status").click();
+    this.selectActionDropdown().contains("Select Status").click();
     cy.get('.sc-bYMpWt > :nth-child(2)').contains("Open").click();
     cy.wait(2000);
     this.resolveTicketButton().click({ force: true });
-    cy.contains("Ticket opened successfully!").should("be.visible");
+    cy.contains("Ticket opened successfully").should("be.visible");
     this.closePopup().click();
   }
 
   holdTicket() {
     this.elipsis().click();
-    this.moredetailsDropdown().contains("More details").click();
-    this.moreOptionsButton().contains("More options").click();
+    this.moredetailsDropdown().contains("More Details").click();
+    this.moreOptionsButton().contains("More Options").click();
     cy.contains("On hold").click();
-    cy.contains("Ticket on hold successfully!").should("be.visible");
+    cy.contains("Ticket on hold successfully").should("be.visible");
     this.closePopup().click();
   }
 
@@ -115,5 +117,14 @@ export class TicketAndSupportPage {
   uploadLargeFile(){
     const fileToUpload = "Transactions-history.pdf";
     cy.get('input[type="file"]').attachFile(fileToUpload)
+  }
+
+  reassignTicket(){
+    this.elipsis().click();
+    this.reAssignDropdownItem().click();
+    cy.contains("Select Assignee").click();
+    cy.get(`button[type="submit"]`).should('be.disabled');
+    cy.contains("Second Level(External)").click();
+    cy.get(`button[type="submit"]`).contains('Reassign Ticket').click();
   }
 }

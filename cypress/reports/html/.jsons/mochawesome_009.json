@@ -1,0 +1,137 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "start": "2023-07-26T11:36:30.290Z",
+    "end": "2023-07-26T11:45:06.430Z",
+    "duration": 516140,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "313cc7b1-5033-48e3-b69d-c218b1da2052",
+      "title": "",
+      "fullFile": "cypress/e2e/User Management/deactivateUser.cy.js",
+      "file": "cypress/e2e/User Management/deactivateUser.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "27ffdd4c-45e4-429a-b780-d61047c112f2",
+          "title": "Deactivate and Activate User",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test that user is able to deactivate a user in the organization",
+              "fullTitle": "Deactivate and Activate User Test that user is able to deactivate a user in the organization",
+              "timedOut": null,
+              "duration": 85283,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress/e2e/User Management/deactivateUser.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/deactivateUser.cy.js/Deactivate and Activate User -- Test that user is able to deactivate a user in the organization (failed).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/deactivateUser.cy.js/Deactivate and Activate User -- Test that user is able to deactivate a user in the organization (failed) (attempt 2).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/deactivateUser.cy.js/Deactivate and Activate User -- Test that user is able to deactivate a user in the organization (failed) (attempt 3).png\"\n        }\n      ]\n    ]\n  }\n]",
+              "code": "newUserPage.accessEndUserPage();\ncy.get(\"table\").contains(\"td\", \"Inactive\").first().scrollIntoView().should(\"be.visible\");\ndeactivateUserPage.clickFirstItem();\ndeactivateUserPage.deactivateUser();\ncy.contains(\"User deactivated successfully\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'Yes continue' within the element: <div.button-text> but never did.",
+                "estack": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'Yes continue' within the element: <div.button-text> but never did.\n    at DeactivateUserPage.deactivateUser (webpack:///./cypress/support/pages/User Management/deactivateUser-page.js:15:26)\n    at Context.eval (webpack:///./cypress/e2e/User Management/deactivateUser.cy.js:23:23)",
+                "diff": null
+              },
+              "uuid": "a9aa2786-d827-4aee-9ac3-05b002e6bf6c",
+              "parentUUID": "27ffdd4c-45e4-429a-b780-d61047c112f2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that user is able to activate a user in the organization",
+              "fullTitle": "Deactivate and Activate User Test that user is able to activate a user in the organization",
+              "timedOut": null,
+              "duration": 82818,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress/e2e/User Management/deactivateUser.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/deactivateUser.cy.js/Deactivate and Activate User -- Test that user is able to activate a user in the organization (failed).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/deactivateUser.cy.js/Deactivate and Activate User -- Test that user is able to activate a user in the organization (failed) (attempt 2).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/deactivateUser.cy.js/Deactivate and Activate User -- Test that user is able to activate a user in the organization (failed) (attempt 3).png\"\n        }\n      ]\n    ]\n  }\n]",
+              "code": "newUserPage.accessEndUserPage();\ncy.get(\"table\").contains(\"td\", \"Deactivated\").first().scrollIntoView().should(\"be.visible\");\ndeactivateUserPage.clickFirstItem();\ndeactivateUserPage.activateUser();\ncy.contains(\"User reactivated successfully.\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'Deactivated' within the element: <table> and with the selector: 'td' but never did.",
+                "estack": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'Deactivated' within the element: <table> and with the selector: 'td' but never did.\n    at Context.eval (webpack:///./cypress/e2e/User Management/deactivateUser.cy.js:29:20)",
+                "diff": null
+              },
+              "uuid": "2448b020-5cc6-43e8-8034-4ce4ea3dd419",
+              "parentUUID": "27ffdd4c-45e4-429a-b780-d61047c112f2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "a9aa2786-d827-4aee-9ac3-05b002e6bf6c",
+            "2448b020-5cc6-43e8-8034-4ce4ea3dd419"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 168101,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

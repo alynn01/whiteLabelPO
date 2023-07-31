@@ -1,0 +1,206 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 0,
+    "pending": 0,
+    "failures": 5,
+    "start": "2023-07-26T11:12:44.183Z",
+    "end": "2023-07-26T11:33:28.370Z",
+    "duration": 1244187,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5235a157-9347-47da-8ad1-0789e9a41f63",
+      "title": "",
+      "fullFile": "cypress/e2e/User Management/createUser.cy.js",
+      "file": "cypress/e2e/User Management/createUser.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "eb65cae9-d284-4b60-900e-ab9c38cb8b67",
+          "title": "Create User",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test that user is able to complete the form",
+              "fullTitle": "Create User Test that user is able to complete the form",
+              "timedOut": null,
+              "duration": 82469,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress/e2e/User Management/createUser.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/createUser.cy.js/Create User -- Test that user is able to complete the form (failed).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/createUser.cy.js/Create User -- Test that user is able to complete the form (failed) (attempt 2).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/createUser.cy.js/Create User -- Test that user is able to complete the form (failed) (attempt 3).png\"\n        }\n      ]\n    ]\n  }\n]",
+              "code": "newUserPage.accessEndUserPage();\nnewUserPage.createEndUser();\nnewUserPage.enterDetails(getPO.email);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'Create new user' within the element: <div.button-text> but never did.",
+                "estack": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'Create new user' within the element: <div.button-text> but never did.\n    at CreateUserPage.eval [as createUserDropdown] (webpack:///./cypress/support/pages/User Management/createUser-page.js:11:36)\n    at CreateUserPage.createEndUser (webpack:///./cypress/support/pages/User Management/createUser-page.js:47:9)\n    at Context.eval (webpack:///./cypress/e2e/User Management/createUser.cy.js:16:16)",
+                "diff": null
+              },
+              "uuid": "5d522270-b3ed-4226-81f1-cedcff78b4e5",
+              "parentUUID": "eb65cae9-d284-4b60-900e-ab9c38cb8b67",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that user is unable to invite a new user to the organization with invalid email",
+              "fullTitle": "Create User Test that user is unable to invite a new user to the organization with invalid email",
+              "timedOut": null,
+              "duration": 83265,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress/e2e/User Management/createUser.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/createUser.cy.js/Create User -- Test that user is unable to invite a new user to the organization with invalid email (failed).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/createUser.cy.js/Create User -- Test that user is unable to invite a new user to the organization with invalid email (failed) (attempt 2).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/createUser.cy.js/Create User -- Test that user is unable to invite a new user to the organization with invalid email (failed) (attempt 3).png\"\n        }\n      ]\n    ]\n  }\n]",
+              "code": "newUserPage.accessEndUserPage();\nnewUserPage.createEndUser();\nnewUserPage.enterDetails(\"hamaz@qa.\");\ncy.get(\".button-text\").contains(\"Create user\").click();\ncy.contains(\"emailAddress must be a valid email\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'Create new user' within the element: <div.button-text> but never did.",
+                "estack": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'Create new user' within the element: <div.button-text> but never did.\n    at CreateUserPage.eval [as createUserDropdown] (webpack:///./cypress/support/pages/User Management/createUser-page.js:11:36)\n    at CreateUserPage.createEndUser (webpack:///./cypress/support/pages/User Management/createUser-page.js:47:9)\n    at Context.eval (webpack:///./cypress/e2e/User Management/createUser.cy.js:22:16)",
+                "diff": null
+              },
+              "uuid": "65945ca5-81fe-4d56-9ea3-042b0c72317f",
+              "parentUUID": "eb65cae9-d284-4b60-900e-ab9c38cb8b67",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that user is unable to invite a new user to the organization without details",
+              "fullTitle": "Create User Test that user is unable to invite a new user to the organization without details",
+              "timedOut": null,
+              "duration": 82444,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress/e2e/User Management/createUser.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/createUser.cy.js/Create User -- Test that user is unable to invite a new user to the organization without details (failed).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/createUser.cy.js/Create User -- Test that user is unable to invite a new user to the organization without details (failed) (attempt 2).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/createUser.cy.js/Create User -- Test that user is unable to invite a new user to the organization without details (failed) (attempt 3).png\"\n        }\n      ]\n    ]\n  }\n]",
+              "code": "newUserPage.accessEndUserPage();\nnewUserPage.createEndUser();\ncy.get(\".button-text\").contains(\"Create user\").click();\ncy.contains(\"Email is required\");\ncy.contains(\"Phone number is required\");\ncy.contains(\"First name is required\");\ncy.contains(\"Last name is required\");\ncy.contains(\"Gender is required\");\ncy.contains(\"Program is required\");\ncy.contains(\"Date of Birth is required\");\ncy.contains(\"Country is required\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'Create new user' within the element: <div.button-text> but never did.",
+                "estack": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'Create new user' within the element: <div.button-text> but never did.\n    at CreateUserPage.eval [as createUserDropdown] (webpack:///./cypress/support/pages/User Management/createUser-page.js:11:36)\n    at CreateUserPage.createEndUser (webpack:///./cypress/support/pages/User Management/createUser-page.js:47:9)\n    at Context.eval (webpack:///./cypress/e2e/User Management/createUser.cy.js:30:16)",
+                "diff": null
+              },
+              "uuid": "e0e50a1f-b58a-41c8-aab3-e47b6f541ae6",
+              "parentUUID": "eb65cae9-d284-4b60-900e-ab9c38cb8b67",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that user is able to invite a new user to the organization",
+              "fullTitle": "Create User Test that user is able to invite a new user to the organization",
+              "timedOut": null,
+              "duration": 82836,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress/e2e/User Management/createUser.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/createUser.cy.js/Create User -- Test that user is able to invite a new user to the organization (failed).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/createUser.cy.js/Create User -- Test that user is able to invite a new user to the organization (failed) (attempt 2).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/createUser.cy.js/Create User -- Test that user is able to invite a new user to the organization (failed) (attempt 3).png\"\n        }\n      ]\n    ]\n  }\n]",
+              "code": "newUserPage.accessEndUserPage();\nnewUserPage.createEndUser();\nnewUserPage.enterDetails(getPO.email);\ncy.get(\".button-text\").contains(\"Create user\").click();\ncy.contains(\"Username 'autotester@qa.team' is already taken.\").should(\"be.visible\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'Create new user' within the element: <div.button-text> but never did.",
+                "estack": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'Create new user' within the element: <div.button-text> but never did.\n    at CreateUserPage.eval [as createUserDropdown] (webpack:///./cypress/support/pages/User Management/createUser-page.js:11:36)\n    at CreateUserPage.createEndUser (webpack:///./cypress/support/pages/User Management/createUser-page.js:47:9)\n    at Context.eval (webpack:///./cypress/e2e/User Management/createUser.cy.js:44:16)",
+                "diff": null
+              },
+              "uuid": "848b79da-c59c-44d0-a78c-5e61d0d40bd8",
+              "parentUUID": "eb65cae9-d284-4b60-900e-ab9c38cb8b67",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test that the user is able to sort the list of users using filters",
+              "fullTitle": "Create User Test that the user is able to sort the list of users using filters",
+              "timedOut": null,
+              "duration": 83286,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos\",\n    \"value\": \"cypress/e2e/User Management/createUser.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/createUser.cy.js/Create User -- Test that the user is able to sort the list of users using filters (failed).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/createUser.cy.js/Create User -- Test that the user is able to sort the list of users using filters (failed) (attempt 2).png\"\n        }\n      ],\n      [\n        {\n          \"title\": \"Failed screenshot\",\n          \"value\": \"/User Management/createUser.cy.js/Create User -- Test that the user is able to sort the list of users using filters (failed) (attempt 3).png\"\n        }\n      ]\n    ]\n  }\n]",
+              "code": "newUserPage.accessEndUserPage();\nnewUserPage.sortUserListByProgram();\nnewUserPage.sortUserListByRegion();\nnewUserPage.sortUserListByCountry();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'registration DATE' within the element: <table> but never did.",
+                "estack": "AssertionError: Timed out retrying after 80000ms: Expected to find content: 'registration DATE' within the element: <table> but never did.\n    at CreateUserPage.sortUserListByProgram (webpack:///./cypress/support/pages/User Management/createUser-page.js:77:20)\n    at Context.eval (webpack:///./cypress/e2e/User Management/createUser.cy.js:52:16)",
+                "diff": null
+              },
+              "uuid": "49f1560d-b610-40e6-8f20-fbe27b961c67",
+              "parentUUID": "eb65cae9-d284-4b60-900e-ab9c38cb8b67",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "5d522270-b3ed-4226-81f1-cedcff78b4e5",
+            "65945ca5-81fe-4d56-9ea3-042b0c72317f",
+            "e0e50a1f-b58a-41c8-aab3-e47b6f541ae6",
+            "848b79da-c59c-44d0-a78c-5e61d0d40bd8",
+            "49f1560d-b610-40e6-8f20-fbe27b961c67"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 414300,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
