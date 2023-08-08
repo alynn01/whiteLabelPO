@@ -18,9 +18,9 @@ export class ViewTransactionPage{
         this.calendarFilter().click();
         cy.wait(200)
         this.previousMonth().click();
-        this.selectSixth().click();
+        this.selectSecond().click();
         this.selectSeventh().click();
         this.filterButton().click();
-        cy.get('table').contains("2023-06-07").should('be.visible')
+        cy.get('table').contains("2023-07-03").should('be.visible')
     }
 }

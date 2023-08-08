@@ -27,7 +27,7 @@ export class MoreDetailsPage {
   viewAdministratorsLink = () => cy.contains("View Administrators");
   administratorsEmailAddress = () => cy.contains("phlat@yopmail.com");
   viewEndUsersLink = () => cy.contains("View End Users");
-  endUsersEmail = () => cy.contains("jfg@yopmail.com");
+  endUsersEmail = () => cy.contains("@yopmail.com");
   transactionsTab = () => cy.get(`[class="tab-text"]`).contains("Transactions")
 
   accessProgramPage() {

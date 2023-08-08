@@ -24,7 +24,7 @@ export class TicketAndSupportPage {
   resolveTicketButton = () =>
     cy.get(".sc-kDvujY > .sc-bcXHqe > .button-text").contains("Resolve Ticket");
   closePopup = () => cy.get(".modal-header-content > :nth-child(3) > img");
-  reAssignDropdownItem = () => cy.get('.sc-ifSILs > :nth-child(2)').contains("Reassign Ticket");
+  reAssignDropdownItem = () => cy.contains("Reassign Ticket");
 
   accessTicketsPage() {
     this.ticketTab().click();

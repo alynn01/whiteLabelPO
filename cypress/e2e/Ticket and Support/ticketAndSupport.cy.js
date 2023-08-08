@@ -11,7 +11,7 @@ describe("Ticket and Support", () => {
     loginPage.login('pomsia02@yopmail.com', "Test@123");
   });
 
-  it("Test that user is able to view the tickets list page", () => {
+ it("Test that user is able to view the tickets list page", () => {
     ticketsPage.accessTicketsPage();
   });
 

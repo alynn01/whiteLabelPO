@@ -49,4 +49,28 @@ describe("Fund Program", () => {
     cy.contains("Program account funded successfully").should('be.visible');
     cy.get('[class="button-text"').contains("Go back to Wallet").click();
   });
+  it("Test that user is unable to fund program with invalid OTP", () => {
+loginPage.login("progowner.bbcseikz@mailosaur.io", getPO.password);
+fundProgram.accessFundProgramPage();
+    fundProgram.enterFundDetails(minimumAmount);
+    cy.get(".button-text").contains("Transfer").click();
+    cy.wait(2000)
+    cy.get(".button-text").contains("Yes, continue").click();
+    cy.wait(5000)
+    cy.get(':nth-child(1) > .formInput').type("01234");
+    cy.get('.button-text').contains("Proceed").click();
+    cy.get('.Toastify__toast-body > :nth-child(2)', { timeout: 5000 }).should('contain', 'Invalid Otp');
+});
+it("Test that user is unable to fund program without inputting OTP", () => {
+  loginPage.login("progowner.bbcseikz@mailosaur.io", getPO.password);
+  fundProgram.accessFundProgramPage();
+      fundProgram.enterFundDetails(minimumAmount);
+      cy.get(".button-text").contains("Transfer").click();
+      cy.wait(2000)
+      cy.get(".button-text").contains("Yes, continue").click();
+      cy.wait(5000)
+      cy.get(':nth-child(1) > .formInput').should('be.empty');
+      cy.get('.button-text').contains("Proceed").click();
+      cy.get('.Toastify__toast-body > :nth-child(2)', { timeout: 5000 }).should('contain', 'OTP fields cannot be empty');
+});
 });
