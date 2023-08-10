@@ -3,24 +3,24 @@ export class ViewTransactionPage{
     reportTable = () => cy.get("table");
     calendarFilter = () => cy.get(`input[placeholder="Date"]`);
     previousMonth = () => cy.get('.react-datepicker__navigation');
-    selectSixth = () => cy.get('.react-datepicker__day--006');
-    selectSeventh = () => cy.get('.react-datepicker__day--007');
+    selectTwentyfth = () => cy.get(':nth-child(5) > .react-datepicker__day--025');
+    selectTwentysixth = () => cy.get(':nth-child(5) > .react-datepicker__day--026');
     filterButton = () => cy.get('.btn_filter');
 
     
     
     accessTransactionsPage(){
         this.transactionsTab().click();
-        this.reportTable().should("not.be.empty")
+        this.reportTable().should("not.be.empty");
     }
 
     sortByDate(){
         this.calendarFilter().click();
         cy.wait(200)
         this.previousMonth().click();
-        this.selectSecond().click();
-        this.selectSeventh().click();
+        this.selectTwentyfth().click();
+        this.selectTwentysixth().click();
         this.filterButton().click();
-        cy.get('table').contains("2023-07-03").should('be.visible')
+        cy.get('table').contains("2023-07-26").should('be.visible')
     }
 }
