@@ -16,11 +16,11 @@ export class ViewTransactionPage{
 
     sortByDate(){
         this.calendarFilter().click();
-        cy.wait(200)
+        cy.wait(200);
         this.previousMonth().click();
         this.selectTwentyfth().click();
         this.selectTwentysixth().click();
         this.filterButton().click();
-        cy.get('table').contains("2023-07-26").should('be.visible')
+        cy.get('table').contains("2023-07-26").should('be.visible');
     }
 }
