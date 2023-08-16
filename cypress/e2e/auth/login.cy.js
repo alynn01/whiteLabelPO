@@ -23,12 +23,17 @@ describe("Login Test", () => {
 
   it("Test that user is unable to login without email but correct password", () => {
     cy.get(`input[name="password"]`).type(getPO.password);
+    cy.get(`[class="button-text"]`).contains("Sign In").click();
     cy.contains("Gain Access. Change your life").should("be.visible");
+    cy.contains("Email is a required field").should("be.visible");
+
   });
 
   it("Test that user is unable to login with correct email but no password", () => {
-    cy.get(`input[name="password"]`).type(getPO.email);
+    cy.get(`input[name="email"]`).type(getPO.email);
     cy.contains("Gain Access. Change your life").should("be.visible");
+    cy.get(`[class="button-text"]`).contains("Sign In").click();
+    cy.contains("Password is a required field").should("be.visible");
   });
 
   it("Test that user is unable to login without email or password", () => {
